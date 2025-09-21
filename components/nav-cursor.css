@@ -1,0 +1,48 @@
+/* components/nav-cursor.css */
+
+.cursor {
+  /* Basic Cursor Shape */
+  pointer-events: none;
+  position: fixed;
+  width: 12px;
+  height: 12px;
+  background-color: #64ffd9; /* Teal color matching your theme */
+  border-radius: 50%;
+
+  /* Positioning */
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+
+  /* Animation */
+  transition: transform 0.15s cubic-bezier(0.18, 0.89, 0.32, 1.28), background-color 0.15s ease, width 0.15s ease,
+    height 0.15s ease;
+
+  /* Initial State */
+  will-change: transform;
+}
+
+/* Hover State - Enlarged */
+.cursor-hover {
+  transform: translate(-50%, -50%) scale(3.5);
+  background-color: #e6f1ff; /* Light blue from your text */
+  width: 16px;
+  height: 16px;
+}
+
+/* Click State (optional) */
+.cursor-active {
+  transform: translate(-50%, -50%) scale(2);
+}
+
+/* Motion Heading Fixes */
+.motion-heading {
+  display: inline-block;
+  transition: transform 0.12s linear;
+  will-change: transform;
+  cursor: none !important; /* Force override any cursor styles */
+}
+
+/* Ensure cursor stays visible on dark/light backgrounds */
+.dark .cursor {
+  mix-blend-mode: difference;
+}
