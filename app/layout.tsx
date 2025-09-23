@@ -3,7 +3,6 @@ import { Poppins, Roboto_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import NavCursor from "@/components/NavCursor";
-import FloatingStars from "@/components/FloatingStars";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -32,9 +31,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${poppins.variable} ${robotoMono.variable}`}>
-      <body className="bg-white dark:bg-[#0a192f] text-[#1a202c] dark:text-white antialiased transition-colors duration-300 cursor-none">
+            <body className="bg-white dark:bg-[#0a192f] text-[#1a202c] dark:text-white antialiased transition-colors duration-300 cursor-none">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
-          <FloatingStars />
           <NavCursor />
           {children}
         </ThemeProvider>

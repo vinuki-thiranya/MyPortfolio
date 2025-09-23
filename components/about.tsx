@@ -161,7 +161,7 @@ export default function About() {
   }
 
   return (
-    <section className="flex pt-[150px] pb-0 justify-center items-center bg-[#f8fafc] dark:bg-[#0a192f] transition-colors duration-300">
+        <section className="flex pt-[150px] pb-0 justify-center items-center bg-[#f8fafc] dark:bg-[#0a192f] transition-colors duration-300">
       <div className="w-full max-w-[900px] px-4">
         <motion.div
           initial={{ opacity: 0, y: 50 }}

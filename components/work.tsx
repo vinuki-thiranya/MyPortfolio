@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react"
 import { motion } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
-import { ExternalLink, Github } from "lucide-react"
+import { ExternalLink, Github, ArrowUpRight } from "lucide-react"
 import Footer from "./footer"
 
 interface Project {
@@ -164,7 +164,7 @@ export default function Work() {
                     : "opacity-0 translate-y-32 scale-90"
                 }`}
                 style={{
-                  zIndex: index + 1, // Updated zIndex calculation
+                  zIndex: index + 1,
                   top: `${20 + index * 4}px`,
                 }}
                 onMouseEnter={() => setHoveredProject(project.id)}
@@ -183,8 +183,8 @@ export default function Work() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                   </div>
 
-                  {/* Project Title - Always Visible at Bottom */}
-                  <div className="absolute bottom-0 left-0 right-0 p-8 z-10">
+                  {/* Project Title and Arrow Icon - Always Visible at Top Left */}
+                  <div className="absolute top-0 left-0 p-8 z-10 flex items-center gap-4">
                     <motion.h3
                       className="text-3xl font-bold text-white mb-2"
                       initial={{ opacity: 1 }}
@@ -193,6 +193,20 @@ export default function Work() {
                     >
                       {project.title}
                     </motion.h3>
+                    
+                    {/* Arrow Icon in Box */}
+                    <motion.div
+                      className="flex items-center justify-center w-10 h-10 bg-[#64ffd9]/20 border border-[#64ffd9]/40 rounded-lg backdrop-blur-sm"
+                      initial={{ opacity: 1, scale: 1 }}
+                      animate={{ 
+                        opacity: hoveredProject === project.id ? 0 : 1,
+                        scale: hoveredProject === project.id ? 0.8 : 1
+                      }}
+                      transition={{ duration: 0.3, delay: 0.1 }}
+                      whileHover={{ scale: 1.1, backgroundColor: "rgba(100, 255, 217, 0.3)" }}
+                    >
+                      <ArrowUpRight className="w-5 h-5 text-[#64ffd9]" />
+                    </motion.div>
                   </div>
 
                   {/* Hover Content Overlay - Only visible on hover */}
@@ -267,7 +281,7 @@ export default function Work() {
                           className="flex-1 inline-flex items-center justify-center px-6 py-3 bg-[#64ffd9] hover:bg-[#4fd1c7] text-[#0a192f] font-semibold rounded-lg transition-all duration-300 hover:scale-105"
                           onClick={(e) => e.stopPropagation()}
                         >
-                          <ExternalLink className="w-5 h-5 mr-2" />
+                          <ArrowUpRight className="w-5 h-5 mr-2" />
                           View Project
                         </Link>
                         <a
@@ -289,8 +303,6 @@ export default function Work() {
           </div>
         </div>
       </div>
-
-          
     </div>
     </div>
   )

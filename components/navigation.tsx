@@ -13,8 +13,8 @@ export default function Navigation() {
   const [isChatbotOpen, setIsChatbotOpen] = useState(false)
 
   const navItems = [
-    { num: "", text: "About", href: "#about" },
-    { num: "", text: "Work", href: "#work" },
+   
+    { num: "", text: "PROJECTS", href: "#work" },
   ]
 
   const { theme, setTheme } = useTheme()
@@ -47,24 +47,68 @@ export default function Navigation() {
         {/* Navigation */}
         <nav className="flex justify-end items-center">
           <div className="hidden md:flex">
-            {navItems.map((item, index) => (
-              <motion.a
-                key={item.num}
-                href={item.href}
-                className="flex ml-10 flex-col items-start font-mono text-[#667eea] dark:text-[#64ffd9] text-sm font-medium no-underline group"
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 1.8 + index * 0.1 }}
-              >
-                <div className="flex items-center">
-                  <span className="mr-2.5 text-[#667eea] dark:text-[#64ffd9]">{item.num}.</span>
-                  <span className="text-[#2d3748] dark:text-white group-hover:text-[#5a67d8] dark:group-hover:text-[#64ffd9] transition-colors">
-                    {item.text}
-                  </span>
-                </div>
-                <div className="w-full h-px mt-[3px] bg-[#667eea] dark:bg-[#64ffd9] scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
-              </motion.a>
-            ))}
+            {/* Projects Icon Box with Hover Text */}
+            <motion.a
+              href="#work"
+              className="flex items-center group cursor-pointer relative"
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 1.8 }}
+            >
+              {/* Small Icon Box */}
+              
+                <svg 
+                  width="20" 
+                  height="20" 
+                  viewBox="0 0 24 24" 
+                  fill="none" 
+                  className="text-[#00F5A0] transition-transform duration-300"
+                >
+                  <path 
+                    d="M3 7V17C3 18.1046 3.89543 19 5 19H19C20.1046 19 21 18.1046 21 17V7M3 7L12 2L21 7M3 7L12 12L21 7" 
+                    stroke="currentColor" 
+                    strokeWidth="2" 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round"
+                  />
+                  <path 
+                    d="M8 12V16" 
+                    stroke="currentColor" 
+                    strokeWidth="2" 
+                    strokeLinecap="round"
+                  />
+                  <path 
+                    d="M16 12V16" 
+                    stroke="currentColor" 
+                    strokeWidth="2" 
+                    strokeLinecap="round"
+                  />
+                </svg>
+            
+              
+              {/* Text that slides from right */}
+              <div className="overflow-hidden ml-3">
+                <motion.span
+                  className="font-mono text-[#2d3748] dark:text-white text-sm font-medium whitespace-nowrap block"
+                  initial={{ x: 100, opacity: 0 }}
+                  animate={{ 
+                    x: 0, 
+                    opacity: 1,
+                    transition: { 
+                      duration: 0.4, 
+                      ease: "easeOut",
+                      when: "beforeChildren" 
+                    }
+                  }}
+                  whileHover={{ 
+                    color: "#00F5A0",
+                    transition: { duration: 0.2 }
+                  }}
+                >
+                  PROJECTS
+                </motion.span>
+              </div>
+            </motion.a>
 
             {/* Contact Button - Triggers Chatbot */}
             <motion.button
@@ -74,12 +118,8 @@ export default function Navigation() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 2.0 }}
             >
-              <div className="flex items-center">
-                <span className="mr-2.5 text-[#667eea] dark:text-[#64ffd9]">.</span>
-                <span className="text-[#2d3748] dark:text-white group-hover:text-[#5a67d8] dark:group-hover:text-[#64ffd9] transition-colors">
-                  Contact
-                </span>
-              </div>
+              
+              
               <div className="w-full h-px mt-[3px] bg-[#667eea] dark:bg-[#64ffd9] scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
             </motion.button>
           </div>

@@ -3,13 +3,16 @@
 import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Hero from '@/components/hero'
+import MouseAnimationSection from '@/components/mouse-animation-section'
+import IntroSection from '@/components/intro-section'
+import IntroDarkSection from '@/components/intro-dark-section'
 import Technologies from '@/components/technologies'
 import About from '@/components/about'
 import Experience from '@/components/experience'
 import Work from '@/components/work'
 import Contact from '@/components/contact'
 import Entry from '@/components/entry'
-import FloatingStars from '@/components/FloatingStars' // Import the new component
+
 
 export default function Home() {
   const [loading, setLoading] = useState(true)
@@ -64,13 +67,16 @@ export default function Home() {
       </AnimatePresence>
 
       {/* Add the floating stars background */}
-      <FloatingStars />
+   
 
       {/* Main site */}
       <div >
         <Hero />
+        <MouseAnimationSection />
+        <IntroSection />
+        
         <Work />
-        <Entry />
+       
         <About />
         <Experience />
         <Technologies />

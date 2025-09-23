@@ -113,25 +113,25 @@ export default function Hero() {
 
         <div className="flex flex-col">
   <motion.h1
-    className="motion-heading cursor-target hero-heading mt-0 mb-1 text-[#2d3748] dark:text-[#e6f1ff]/90 text-4xl md:text-6xl lg:text-[75px] leading-[45px] md:leading-[70px] lg:leading-[90px] font-bold"
+    className="motion-heading cursor-target hero-heading mt-0 mb-1 text-[#2d3748] dark:text-[#e6f1ff]/90 text-4xl md:text-6xl lg:text-[75px] leading-[45px] md:leading-[70px] lg:leading-[90px] font-black tracking-tight"
     data-cursor-target="true"
     initial={{ opacity: 0, y: 50 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.8, delay: 2.4 }}
     style={{ cursor: "none" }}
   >
-    {"Hello, I'm"}
+    {"HELLO, I'M"}
   </motion.h1>
 
   <motion.h1
-    className="motion-heading cursor-target hero-heading mt-0 mb-2 text-[#2d3748] dark:text-[#e6f1ff]/90 text-4xl md:text-6xl lg:text-[80px] leading-[45px] md:leading-[70px] lg:leading-[90px] font-bold"
+    className="motion-heading cursor-target hero-heading mt-0 mb-2 text-[#2d3748] dark:text-[#e6f1ff]/90 text-4xl md:text-6xl lg:text-[80px] leading-[45px] md:leading-[70px] lg:leading-[90px] font-black tracking-tight"
     data-cursor-target="true"
     initial={{ opacity: 0, y: 50 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.8, delay: 2.6 }}
     style={{ cursor: "none" }}
   >
-    {" Vinuki Thiranya"}
+    {" VINUKI THIRANYA"}
   </motion.h1>
 </div>
 
