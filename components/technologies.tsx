@@ -1,8 +1,9 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion, useInView } from 'framer-motion'
 import { Download, Github } from 'lucide-react'
-import Image from 'next/image';
+import Image from 'next/image'
+import { useRef } from 'react'
 
 export default function Technologies() {
   const technologies = [
@@ -31,16 +32,16 @@ export default function Technologies() {
           {/* How I Work Section */}
 
 
-        <motion.div
-          className="max-w-[800px] mx-auto"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
-        >
-          <h2 className="text-[#e6f1ff] font-poppins text-2xl font-semibold mb-12 text-center">
+        <div className="max-w-[800px] mx-auto">
+          <motion.h2 
+            className="text-[#e6f1ff] font-poppins text-2xl font-semibold mb-12 text-center"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ amount: 0.3 }}
+          >
             Languages and Tools I work with
-          </h2>
+          </motion.h2>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 lg:gap-6">
             {technologies.map((tech, index) => (
@@ -50,7 +51,7 @@ export default function Technologies() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
+                viewport={{ amount: 0.2 }}
                 whileHover={{ y: -5 }}
               >
                 <div className="w-12 h-12 mb-3 flex items-center justify-center text-2xl bg-[#2d3748] group-hover:bg-[#4a5568] rounded-lg transition-all duration-200 border border-[#64ffd9]/20 group-hover:border-[#64ffd9]/40">
@@ -136,7 +137,7 @@ export default function Technologies() {
               </motion.div>
             ))}
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   )

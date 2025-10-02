@@ -19,9 +19,9 @@ const robotoMono = Roboto_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "John Doe - Portfolio",
+  title: "Vinuki Thiranya - Portfolio",
   description: "Software Engineer & Web Developer Portfolio",
-  generator: "v0.dev",
+ 
 };
 
 export default function RootLayout({

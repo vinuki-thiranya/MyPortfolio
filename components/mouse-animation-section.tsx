@@ -31,12 +31,11 @@ export default function MouseAnimationSection() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  if (!isVisible) return null
-
   return (
-        <section className="relative h-64 bg-[#0a192f] flex items-center justify-center">
-      {/* Mouse Animation */}
-      <div className="cursor-pointer group" onClick={scrollToNextSection}>
+        <section className="relative h-32 bg-[#0a192f] flex items-center justify-center">
+      {/* Mouse Animation - conditionally rendered */}
+      {isVisible && (
+        <div className="cursor-pointer group" onClick={scrollToNextSection}>
         <div className="relative">
           {/* Mouse Body with subtle pulse animation */}
           <div className="w-8 h-12 border-2 border-white/60 rounded-full relative group-hover:border-white/80 transition-colors flex justify-center animate-[mousePulse_3s_ease-in-out_infinite]">
@@ -45,6 +44,7 @@ export default function MouseAnimationSection() {
           </div>
         </div>
       </div>
+      )}
 
       {/* Custom animation styles */}
       <style jsx>{`

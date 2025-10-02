@@ -8,6 +8,7 @@ import IntroSection from '@/components/intro-section'
 import IntroDarkSection from '@/components/intro-dark-section'
 import Technologies from '@/components/technologies'
 import About from '@/components/about'
+import OnlyAboutDesc from '@/components/only_about_desc'
 import Experience from '@/components/experience'
 import Work from '@/components/work'
 import Contact from '@/components/contact'
@@ -72,12 +73,14 @@ export default function Home() {
       {/* Main site */}
       <div >
         <Hero />
-        <MouseAnimationSection />
-        <IntroSection />
+         <MouseAnimationSection />
+        <OnlyAboutDesc />
+       
+        {/* <IntroSection />*/}
         
         <Work />
        
-        <About />
+         {/*<About />*/}
         <Experience />
         <Technologies />
         <Contact />

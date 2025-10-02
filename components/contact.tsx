@@ -1,35 +1,53 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion, useInView } from "framer-motion"
+import { useRef } from "react"
 
 export default function Contact() {
   return (
     <section className="pt-[150px] pb-[50px] bg-[#0a192f] relative" id="contact">
       <div className="max-w-[900px] mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <div className="w-[200px] border-b border-[#e6f1ff] font-poppins text-[#e6f1ff] text-sm leading-10 font-semibold tracking-[2px] uppercase mb-8 text-slate-300">
+        <div>
+          <motion.div 
+            className="w-[200px] border-b border-[#e6f1ff] font-poppins text-[#e6f1ff] text-sm leading-10 font-semibold tracking-[2px] uppercase mb-8 text-slate-300"
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ amount: 0.3 }}
+          >
             CONTACT
-          </div>
+          </motion.div>
 
-          <h1 className="font-poppins text-[#e6f1ff] text-6xl md:text-8xl lg:text-[100px] leading-[110px] mb-12 font-semibold">
+          <motion.h1 
+            className="font-poppins text-[#e6f1ff] text-6xl md:text-8xl lg:text-[100px] leading-[110px] mb-12 font-semibold"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ amount: 0.3 }}
+          >
             say hello
-          </h1>
+          </motion.h1>
 
-          <div className="max-w-[600px] mb-12">
+          <motion.div 
+            className="max-w-[600px] mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            viewport={{ amount: 0.3 }}
+          >
             <p className="text-[#e6f1ff]/70 font-poppins leading-8 text-sm">
               Although I'm not currently looking for freelance opportunities, my inbox is always open. Whether for a
               potential project or just to say hi, I'll try my best to answer your email!
             </p>
-          </div>
+          </motion.div>
 
           <motion.a
             href="mailto:hello@johndoe.com"
             className="inline-flex items-center text-[#64ffd9] font-poppins hover:text-[#4fd1c7] transition-colors text-sm"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.8 }}
+            viewport={{ amount: 0.3 }}
             whileHover={{ x: 5 }}
           >
             Send Email
@@ -41,7 +59,7 @@ export default function Contact() {
               />
             </svg>
           </motion.a>
-        </motion.div>
+        </div>
 
         {/* Footer */}
         <motion.div
@@ -51,7 +69,7 @@ export default function Contact() {
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          <div className="font-poppins text-[#e6f1ff]/30 text-sm">© 2019 . WebDev For You . All Rights Reserved</div>
+          <div className="font-poppins text-[#e6f1ff]/30 text-sm">© 2025 . WebDev For You . All Rights Reserved</div>
 
           <div className="flex justify-end items-center gap-8">
             <a

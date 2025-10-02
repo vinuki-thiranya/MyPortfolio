@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { motion } from "framer-motion"
+import { motion, useInView } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
 import { ExternalLink, Github, ArrowUpRight } from "lucide-react"
@@ -21,75 +21,75 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
-    title: "E-Commerce Platform",
+    title: "FormLang++ – A Domain-Specific Language for HTML Form Generation",
     description:
-      "A comprehensive e-commerce platform built with modern technologies, featuring user authentication, payment processing, inventory management, and an intuitive admin dashboard.",
+      "Developed a domain-specific language (DSL) called FormLang++ to simplify and automate creating dynamic, validated HTML forms using a declarative, human-readable syntax. Built using C, Flex (Lex), and Bison (Yacc).",
     image:
-      "https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80",
-    technologies: ["React", "Node.js", "MongoDB", "Stripe"],
-    liveUrl: "https://ecommerce-example.com",
-    githubUrl: "https://github.com/user/ecommerce",
-    slug: "ecommerce-platform",
+      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+    technologies: ["C", "Flex (Lex)", "Bison (Yacc)", "Parsing", "Compiler Design"],
+    liveUrl: "https://github.com/it23425590/Formlang-DSL",
+    githubUrl: "https://github.com/it23425590/Formlang-DSL",
+    slug: "formlang-plus-plus",
   },
   {
     id: 2,
-    title: "Task Management App",
+    title: "Auto Service Spare Parts Management System",
     description:
-      "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features built for modern teams.",
+      "Designed and developed a fully responsive web application to streamline spare part management for an auto service shop, with secure user access, admin controls, and modern UI/UX. Led the Authentication & User Management Module.",
     image:
-      "https://images.unsplash.com/photo-1579389083078-4e7018379f7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80",
-    technologies: ["Vue.js", "Firebase", "Vuetify"],
-    liveUrl: "https://taskapp-example.com",
-    githubUrl: "https://github.com/user/taskapp",
-    slug: "task-management-app",
+      "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+    technologies: ["React.js", "Spring Boot", "Spring Security", "JWT", "MySQL", "Tailwind CSS"],
+    liveUrl: "https://github.com/SLIIT-FacultyOfComputing/se-group-project-group-08-auto-spares-and-services",
+    githubUrl: "https://github.com/SLIIT-FacultyOfComputing/se-group-project-group-08-auto-spares-and-services",
+    slug: "auto-service-management-system",
   },
   {
     id: 3,
-    title: "Weather Dashboard",
+    title: "Distributed Logging System",
     description:
-      "A comprehensive weather dashboard providing real-time weather data, 5-day forecasts, and location-based services with an intuitive and responsive interface.",
+      "Developed a fault-tolerant distributed logging system designed to maintain high availability, consistency, and reliability even during node failures. Specialized in Time Synchronization & Fault Tolerance Module using NTP and heartbeat algorithms.",
     image:
-      "https://images.unsplash.com/photo-1601134467661-3d775b999c8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80",
-    technologies: ["React", "OpenWeather API", "Geolocation"],
-    liveUrl: "https://weather-example.com",
-    githubUrl: "https://github.com/user/weather-app",
-    slug: "weather-dashboard",
+      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+    technologies: ["Python", "FastAPI", "PostgreSQL", "Flask", "NTP", "Distributed Systems"],
+    liveUrl: "https://github.com/it23425590/ds_project_group08",
+    githubUrl: "https://github.com/it23425590/ds_project_group08",
+    slug: "distributed-logging-system",
   },
   {
     id: 4,
-    title: "Portfolio Website",
+    title: "Dogwood Flora – Online Floral Shop Management System",
     description:
-      "A modern portfolio website with animated transitions, dark mode, responsive design, and interactive chatbot for enhanced user engagement.",
+      "Designed and developed a full-stack web application for managing a floral shop's online operations. Implemented product CRUD features and customer-facing product views using Spring Boot, Thymeleaf, and MySQL.",
     image:
-      "https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80",
-    technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
-    liveUrl: "https://portfolio-example.com",
-    githubUrl: "https://github.com/user/portfolio",
-    slug: "portfolio-website",
+      "https://images.unsplash.com/photo-1490750967868-88aa4486c946?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+    technologies: ["Java", "Spring Boot", "Thymeleaf", "MySQL", "Bootstrap", "HTML/CSS"],
+    liveUrl: "https://github.com/it23425590/OOAD-Group-Assignment",
+    githubUrl: "https://github.com/it23425590/OOAD-Group-Assignment",
+    slug: "dogwood-flora-management-system",
   },
   {
     id: 5,
-    title: "Recipe Finder",
+    title: "INTELLIHELMET: The Smart Safety Helmet",
     description:
-      "A comprehensive recipe discovery application that helps users find, save, and plan meals with detailed nutritional information and smart search capabilities.",
+      "Developed a smart safety helmet for miners with advanced sensor integration including atmospheric pressure, gas detection, heart rate monitoring, and temperature sensors. Created comprehensive web dashboard for real-time monitoring.",
     image:
-      "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80",
-    technologies: ["JavaScript", "Edamam API", "Local Storage"],
-    liveUrl: "https://recipes-example.com",
-    githubUrl: "https://github.com/user/recipe-finder",
-    slug: "recipe-finder",
+      "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+    technologies: ["Arduino", "IoT", "BMP280", "MQ135", "MAX30102", "Web Design", "HTML/CSS"],
+    liveUrl: "#",
+    githubUrl: "#",
+    slug: "intellihelmet-smart-safety-helmet",
   },
   {
     id: 6,
-    title: "Fitness Tracker",
+    title: "Portfolio Website",
     description:
-      "A comprehensive fitness tracking application that helps users monitor workouts, track progress, and achieve their fitness goals with detailed analytics and insights.",
+      "A modern portfolio website with animated transitions, dark mode, responsive design, and smooth scroll animations built with Next.js, TypeScript, and Framer Motion for enhanced user experience.",
     image:
-      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80",
-    technologies: ["TypeScript", "Chart.js", "Firebase"],
-    liveUrl: "https://fitness-example.com",
-    githubUrl: "https://github.com/user/fitness-tracker",
-    slug: "fitness-tracker",
+      "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "React"],
+    liveUrl: "#",
+    githubUrl: "https://github.com/vinuki-thiranya/MyPortfolio",
+    slug: "portfolio-website",
   },
 ]
 
@@ -132,22 +132,37 @@ export default function Work() {
      <div className="bg-gradient-to-br from-[#0a192f] to-[#0f172a] py-20 px-6 sm:px-10 md:px-14 lg:px-20 xl:px-28 2xl:px-36">
         <div className="max-w-[900px] mx-auto">
           {/* Section Heading */}
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <div className="w-[400px] ml-[3px] border-b border-[#667eea] dark:border-[#e6f1ff] text-[#2d3748] dark:text-[#e6f1ff] font-poppins text-sm leading-10 font-semibold tracking-[2px] uppercase mb-4">
+          <div>
+            <motion.div 
+              className="w-[400px] ml-[3px] border-b border-[#667eea] dark:border-[#e6f1ff] text-[#2d3748] dark:text-[#e6f1ff] font-poppins text-sm leading-10 font-semibold tracking-[2px] uppercase mb-4"
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ amount: 0.3 }}
+            >
               Some Things I've Built
-            </div>
-            <h1 className="mt-2 mb-4 text-[#1a202c] dark:text-[#e6f1ff]/90 font-poppins text-6xl md:text-8xl lg:text-[100px] leading-[110px] font-semibold">
+            </motion.div>
+            
+            <motion.h1 
+              className="mt-2 mb-4 text-[#1a202c] dark:text-[#e6f1ff]/90 font-poppins text-6xl md:text-8xl lg:text-[100px] leading-[110px] font-semibold"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              viewport={{ amount: 0.3 }}
+            >
               my projects
-            </h1>
-            <p className="w-full mb-8 text-[#4a5568] dark:text-[#e6f1ff]/70 font-poppins text-base leading-7">
+            </motion.h1>
+            
+            <motion.p 
+              className="w-full mb-8 text-[#4a5568] dark:text-[#e6f1ff]/70 font-poppins text-base leading-7"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              viewport={{ amount: 0.3 }}
+            >
               Here are some selected projects I've worked on. Each represents unique challenges and solutions.
-            </p>
-          </motion.div>
+            </motion.p>
+          </div>
 
       {/* Projects Container */}
       <div ref={containerRef} className="relative">

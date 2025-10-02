@@ -1,7 +1,7 @@
 "use client"
 
-import { motion } from "framer-motion"
-import { useState } from "react"
+import { motion, useInView } from "framer-motion"
+import { useState, useRef } from "react"
 import { ChevronDown } from "lucide-react"
 
 export default function Experience() {
@@ -9,54 +9,73 @@ export default function Experience() {
 
   const experiences = [
     {
-      title: "Senior Frontend Developer",
-      company: "Tech Company",
-      period: "2022 - Present",
-      type: "Full-time",
-      description: "Led development of responsive web applications using React, TypeScript, and modern CSS frameworks.",
-      link: "https://company.com",
+      title: "Software Engineering",
+      company: "Core Foundation & Architecture",
+      period: "Academic & Project Experience",
+      type: "Expertise Area",
+      description: "I have a solid foundation in core software engineering principles, including Object-Oriented Programming (OOP), Data Structures & Algorithms, and Design Patterns, which I apply to build efficient and maintainable solutions. My experience includes system design and architecture, creating scalable applications with RESTful API design and database-backed services. I am skilled in Agile & Scrum methodologies, Git-based version control, and have practical exposure to CI/CD workflows for smooth software delivery.",
+      link: "#",
     },
     {
-      title: "Frontend Developer",
-      company: "Digital Agency",
-      period: "2020 - 2022",
-      type: "Full-time",
-      description:
-        "Developed and maintained client websites and web applications with focus on performance and accessibility.",
-      link: "https://agency.com",
+      title: "Web & Application Development",
+      company: "Full-Stack Development Lifecycle",
+      period: "Hands-on Project Experience",
+      type: "Technical Skills",
+      description: "My expertise covers the full-stack development lifecycle, from designing databases and backends with Spring Boot, PHP, and SQL, to building responsive frontends with React, Next.js, and Bootstrap. I have worked on e-commerce and domain-specific platforms (floral shop, pineapple store, spare parts shop), ensuring features such as authentication, order management, and event booking workflows. Performance, maintainability, and user experience are core aspects of my development approach.",
+      link: "#",
     },
     {
-      title: "Junior Developer",
-      company: "Startup Inc",
-      period: "2019 - 2020",
-      type: "Full-time",
-      description: "Contributed to various projects including e-commerce platforms and content management systems.",
-      link: "https://startup.com",
+      title: "Data & Systems",
+      company: "Database Design & Distributed Systems",
+      period: "Academic & Lab Implementation",
+      type: "System Design",
+      description: "I have hands-on experience with database design, data modeling, and ETL concepts, applying them in real-world systems to ensure data integrity, consistency, and reliability. My academic background also covers distributed systems concepts such as replication, fault tolerance, and consensus, which I have explored through coursework and lab-based implementations.",
+      link: "#",
+    },
+    {
+      title: "AI & Applied Machine Learning",
+      company: "NLP & AI-Powered Applications",
+      period: "Project Applications",
+      type: "Emerging Tech",
+      description: "While not my primary focus, I have applied AI concepts in projects, particularly in Natural Language Processing (NLP) and AI-powered applications. This includes integrating Gemini AI for generating customized interview questions and applying data preprocessing and evaluation techniques to deliver practical, user-facing solutions.",
+      link: "#",
     },
   ]
 
   return (
     <section className="flex pt-[150px] pb-0 justify-center items-center bg-white dark:bg-[#0a192f] transition-colors duration-300">
       <div className="w-full max-w-[900px] px-4">
-        <motion.div
-          className="tracking-normal leading-7 text-left"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <div className="w-[200px] ml-[3px] border-b border-[#e2e8f0] dark:border-[#e6f1ff]/15 font-poppins text-[#2d3748] dark:text-[#e6f1ff] text-sm leading-10 font-semibold tracking-[2px] uppercase mb-5">
+         <div className="tracking-normal leading-7 text-left">
+          <motion.div 
+            className="w-[200px] ml-[3px] border-b border-[#e2e8f0] dark:border-[#e6f1ff]/15 font-poppins text-[#2d3748] dark:text-[#e6f1ff] text-sm leading-10 font-semibold tracking-[2px] uppercase mb-5"
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ threshold: 0.3 }}
+          >
             Where I've Worked
-          </div>
+          </motion.div>
 
-          <h1 className="mt-5 mb-15 font-poppins text-[#1a202c] dark:text-[#e6f1ff]/90 text-6xl md:text-8xl lg:text-[100px] leading-[110px] font-semibold">
+          <motion.h1 
+            className="mt-5 mb-15 font-poppins text-[#1a202c] dark:text-[#e6f1ff]/90 text-6xl md:text-8xl lg:text-[100px] leading-[110px] font-semibold"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ threshold: 0.3 }}
+          >
             Experience
-          </h1>
+          </motion.h1>
 
-          <p className="w-full max-w-[400px] text-[#4a5568] dark:text-[#e6f1ff]/80 font-poppins text-base leading-7 mb-20 mt-10">
-            Here's a brief rundown of my most recent experiences and accomplishments.
-          </p>
-        </motion.div>
+          <motion.p 
+            className="w-full max-w-[4000px] text-[#4a5568] dark:text-[#e6f1ff]/80 font-poppins text-base leading-7 mb-20 mt-10"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            viewport={{ threshold: 0.3 }}
+          >
+            Here's a brief rundown of my  experiences and skills.
+          </motion.p>
+        </div>
 
         <div className="space-y-0">
           {experiences.map((exp, index) => (
@@ -66,7 +85,7 @@ export default function Experience() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
+              viewport={{ amount: 0.2 }}
             >
               <div
                 className="flex justify-between cursor-pointer pb-7 items-end"
@@ -105,13 +124,10 @@ export default function Experience() {
                   <p className="mb-5 font-poppins text-[#4a5568] dark:text-[#e6f1ff]/70 text-base leading-7">
                     {exp.description}
                   </p>
-                  <a
-                    href={exp.link}
-                    className="flex items-center font-poppins text-[#5a67d8] dark:text-[#64ffd9]/80 no-underline hover:text-[#4c51bf] dark:hover:text-[#64ffd9] transition-colors"
-                  >
-                    <span>Visit Company</span>
-                    <span className="ml-4 text-xs">→</span>
-                  </a>
+                  <div className="flex items-center font-poppins text-[#5a67d8] dark:text-[#64ffd9]/80 text-sm">
+                    <span>Core Competency Area</span>
+                    <span className="ml-4 text-xs">✓</span>
+                  </div>
                 </div>
               </motion.div>
             </motion.div>
