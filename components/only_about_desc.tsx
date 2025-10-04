@@ -11,11 +11,9 @@ export default function OnlyAboutDesc() {
   })
 
   const lines = [
-    "I am a passionate problem-solver driven by curiosity and a desire to create impactful solutions through technology. I thrive on turning complex challenges into elegant, efficient systems—whether building intuitive applications, designing intelligent data pipelines, or engineering scalable software.",
+    "I’m passionate about solving problems, exploring modern technologies, and designing user-friendly solutions that make a real impact. I enjoy learning continuously, working on innovative ideas, and creating experiences that bring value to both users and organizations",
     "",
-    "Beyond code, I am a continuous learner who enjoys exploring emerging tech, collaborating with diverse teams, and contributing to meaningful projects. I believe in clear communication, clean design, and user-centered thinking to bridge technical complexity with real-world value.",
-    "",
-    "My goal is to grow as a versatile engineer in a forward-thinking environment, contributing creatively, learning collaboratively, and helping build the future one thoughtful solution at a time."
+    "    My goal is to grow professionally while contributing to meaningful projects that connect creativity with technology."
   ]
 
   return (

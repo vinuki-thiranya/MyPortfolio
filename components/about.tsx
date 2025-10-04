@@ -17,22 +17,18 @@ export default function About() {
     0: {
       title: "About Me",
       content: (
-        <div className="space-y-6">
-          <p className="text-[#4a5568] dark:text-[#e6f1ff]/70 font-poppins text-base leading-7">
-            I'm a passionate full-stack developer with over 5 years of experience creating digital experiences that
-            combine beautiful design with robust functionality. I specialize in modern web technologies and have a keen
-            eye for detail.
-          </p>
-          <p className="text-[#4a5568] dark:text-[#e6f1ff]/70 font-poppins text-base leading-7">
-            When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or
-            sharing knowledge with the developer community. I believe in writing clean, maintainable code and creating
-            user-centered solutions.
-          </p>
-          <p className="text-[#4a5568] dark:text-[#e6f1ff]/70 font-poppins text-base leading-7">
-            My goal is to bridge the gap between design and development, creating seamless experiences that users love
-            and businesses value.
-          </p>
-        </div>
+       <div className="space-y-3">
+  <p className="text-[#4a5568] dark:text-[#e6f1ff]/70 font-poppins text-base leading-7">
+    I’m passionate about solving problems, exploring modern technologies, and designing user-friendly solutions that make a real impact.
+  </p>
+  <p className="text-[#4a5568] dark:text-[#e6f1ff]/70 font-poppins text-base leading-7">
+    I enjoy learning continuously, working on innovative ideas, and creating experiences that bring value to both users and organizations.
+  </p>
+  <p className="text-[#4a5568] dark:text-[#e6f1ff]/70 font-poppins text-base leading-7">
+    My goal is to grow professionally while contributing to meaningful projects that connect creativity with technology.
+  </p>
+</div>
+
       ),
     },
     1: {

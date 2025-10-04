@@ -46,15 +46,19 @@ export default function Experience() {
     <section className="flex pt-[150px] pb-0 justify-center items-center bg-white dark:bg-[#0a192f] transition-colors duration-300">
       <div className="w-full max-w-[900px] px-4">
          <div className="tracking-normal leading-7 text-left">
-          <motion.div 
-            className="w-[200px] ml-[3px] border-b border-[#e2e8f0] dark:border-[#e6f1ff]/15 font-poppins text-[#2d3748] dark:text-[#e6f1ff] text-sm leading-10 font-semibold tracking-[2px] uppercase mb-5"
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ threshold: 0.3 }}
-          >
-            Where I've Worked
-          </motion.div>
+          
+
+           <motion.div 
+                      className="w-[200px] ml-[3px] border-b border-[#667eea] dark:border-[#e6f1ff] text-[#2d3748] dark:text-[#e6f1ff] font-poppins text-sm leading-10 font-semibold tracking-[2px] uppercase mb-5"
+                      initial={{ opacity: 0, x: -30 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.6, delay: 0.2 }}
+                      viewport={{ amount: 0.3 }}
+                    >
+                       Where I've Worked
+                    </motion.div>
+
+
 
           <motion.h1 
             className="mt-5 mb-15 font-poppins text-[#1a202c] dark:text-[#e6f1ff]/90 text-6xl md:text-8xl lg:text-[100px] leading-[110px] font-semibold"
