@@ -23,7 +23,7 @@ const projects: Project[] = [
     id: 1,
     title: "FormLang++ – A Domain-Specific Language for HTML Form Generation",
     description:
-      "Developed a domain-specific language (DSL) called FormLang++ to simplify and automate creating dynamic, validated HTML forms using a declarative, human-readable syntax. Built using C, Flex (Lex), and Bison (Yacc).",
+      "",
     image:
       "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
     technologies: ["C", "Flex (Lex)", "Bison (Yacc)", "Parsing", "Compiler Design"],
@@ -35,7 +35,7 @@ const projects: Project[] = [
     id: 2,
     title: "Auto Service Spare Parts Management System",
     description:
-      "Designed and developed a fully responsive web application to streamline spare part management for an auto service shop, with secure user access, admin controls, and modern UI/UX. Led the Authentication & User Management Module.",
+      "",
     image:
       "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
     technologies: ["React.js", "Spring Boot", "Spring Security", "JWT", "MySQL", "Tailwind CSS"],
@@ -47,7 +47,7 @@ const projects: Project[] = [
     id: 3,
     title: "Distributed Logging System",
     description:
-      "Developed a fault-tolerant distributed logging system designed to maintain high availability, consistency, and reliability even during node failures. Specialized in Time Synchronization & Fault Tolerance Module using NTP and heartbeat algorithms.",
+      "",
     image:
       "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
     technologies: ["Python", "FastAPI", "PostgreSQL", "Flask", "NTP", "Distributed Systems"],
@@ -59,7 +59,7 @@ const projects: Project[] = [
     id: 4,
     title: "Dogwood Flora – Online Floral Shop Management System",
     description:
-      "Designed and developed a full-stack web application for managing a floral shop's online operations. Implemented product CRUD features and customer-facing product views using Spring Boot, Thymeleaf, and MySQL.",
+      "",
     image:
       "https://images.unsplash.com/photo-1490750967868-88aa4486c946?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
     technologies: ["Java", "Spring Boot", "Thymeleaf", "MySQL", "Bootstrap", "HTML/CSS"],
@@ -71,7 +71,7 @@ const projects: Project[] = [
     id: 5,
     title: "INTELLIHELMET: The Smart Safety Helmet",
     description:
-      "Developed a smart safety helmet for miners with advanced sensor integration including atmospheric pressure, gas detection, heart rate monitoring, and temperature sensors. Created comprehensive web dashboard for real-time monitoring.",
+      "",
     image:
       "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
     technologies: ["Arduino", "IoT", "BMP280", "MQ135", "MAX30102", "Web Design", "HTML/CSS"],
@@ -83,7 +83,7 @@ const projects: Project[] = [
     id: 6,
     title: "Portfolio Website",
     description:
-      "A modern portfolio website with animated transitions, dark mode, responsive design, and smooth scroll animations built with Next.js, TypeScript, and Framer Motion for enhanced user experience.",
+      "",
     image:
       "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "React"],
