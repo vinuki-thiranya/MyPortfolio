@@ -5,7 +5,7 @@ import { useRef } from "react"
 import Navigation from "./navigation"
 import Grid from "./grid"
 import Footer from "./footer"
-import { Download, Github, Linkedin, Facebook, Instagram } from "lucide-react"
+import { Download, Github, Linkedin, Facebook, Instagram, Mail } from "lucide-react"
 import { Playfair_Display, Inter } from 'next/font/google'
 
 // Load fonts
@@ -244,15 +244,14 @@ export default function Hero() {
             >
               <Instagram className="w-4 h-4" />
             </motion.a>
-          </div>
 
-          <div className="text-center">
             <motion.a
               href="mailto:vtkatugampala@gmail.com"
-              className="inline-block font-poppins text-[#e6f1ff]/80 hover:text-[#64ffd9] text-sm transition-colors"
-              whileHover={{ y: -2 }}
+              className="flex w-10 h-10 justify-center items-center rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-[#e6f1ff] hover:text-[#64ffd9] transition-all duration-300"
+              whileHover={{ y: -2, scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
             >
-              vtkatugampala@gmail.com
+              <Mail className="w-4 h-4" />
             </motion.a>
           </div>
         </motion.div>

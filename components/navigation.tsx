@@ -138,17 +138,6 @@ export default function Navigation() {
                 {item.text}
               </motion.a>
             ))}
-
-            {/* Mobile Contact Button */}
-            <motion.button
-              onClick={handleContactClick}
-              className="font-poppins text-[#2d3748] dark:text-white text-sm font-medium no-underline hover:text-[#5a67d8] dark:hover:text-[#64ffd9] transition-colors cursor-pointer"
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 2.0 }}
-            >
-              Contact
-            </motion.button>
           </div>
 
           {/* Theme Toggle */}
