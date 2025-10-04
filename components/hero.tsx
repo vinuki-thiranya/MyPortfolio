@@ -223,16 +223,7 @@ export default function Hero() {
               <Linkedin className="w-4 h-4" />
             </motion.a>
 
-            <motion.a
-              href="https://www.facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex w-10 h-10 justify-center items-center rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-[#e6f1ff] hover:text-[#64ffd9] transition-all duration-300"
-              whileHover={{ y: -2, scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              <Facebook className="w-4 h-4" />
-            </motion.a>
+            {/* Facebook removed from mobile */}
 
             <motion.a
               href="https://www.instagram.com"

@@ -129,12 +129,12 @@ export default function Work() {
   }, [])
 
   return (
-     <div className="bg-gradient-to-br from-[#0a192f] to-[#0f172a] py-20 px-6 sm:px-10 md:px-14 lg:px-20 xl:px-28 2xl:px-36">
+    <div id="work" className="bg-gradient-to-br from-[#0a192f] to-[#0f172a] py-20 px-6 sm:px-10 md:px-14 lg:px-20 xl:px-28 2xl:px-36">
         <div className="max-w-[900px] mx-auto">
           {/* Section Heading */}
           <div>
             <motion.div 
-              className="w-[400px] ml-[3px] border-b border-[#667eea] dark:border-[#e6f1ff] text-[#2d3748] dark:text-[#e6f1ff] font-poppins text-sm leading-10 font-semibold tracking-[2px] uppercase mb-4"
+              className="w-[250px] ml-[3px] border-b border-[#667eea] dark:border-[#e6f1ff] text-[#2d3748] dark:text-[#e6f1ff] font-poppins text-sm leading-10 font-semibold tracking-[2px] uppercase mb-5"
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -150,7 +150,7 @@ export default function Work() {
               transition={{ duration: 0.8, delay: 0.4 }}
               viewport={{ amount: 0.3 }}
             >
-              my projects
+              projects
             </motion.h1>
             
             <motion.p 
