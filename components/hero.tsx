@@ -95,6 +95,7 @@ export default function Hero() {
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 1.5 }}
+        style={{ fontFamily: 'var(--font-playfair), var(--font-inter)' }}
       >
 
        
@@ -118,7 +119,7 @@ export default function Hero() {
     initial={{ opacity: 0, y: 50 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.8, delay: 2.4 }}
-    style={{ cursor: "none" }}
+          style={{ cursor: "none", fontFamily: 'var(--font-playfair), var(--font-inter)' }}
   >
     {"HELLO, I'M"}
   </motion.h1>
@@ -129,7 +130,7 @@ export default function Hero() {
     initial={{ opacity: 0, y: 50 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.8, delay: 2.6 }}
-    style={{ cursor: "none" }}
+    style={{ cursor: "none", fontFamily: 'var(--font-playfair), var(--font-inter)' }}
   >
     {" VINUKI THIRANYA"}
   </motion.h1>
@@ -139,7 +140,7 @@ export default function Hero() {
 
 
         <motion.p
-          className="hidden lg:block mb-4 md:mb-6 lg:mb-8 text-[#4a5568] dark:text-[#e6f1ff]/70 text-lg leading-6 md:leading-7 lg:leading-8 max-w-[650px]"
+          className="mb-4 md:mb-6 lg:mb-8 text-[#4a5568] dark:text-[#e6f1ff]/70 text-lg leading-6 md:leading-7 lg:leading-8 max-w-[650px]"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 2.6 }}
@@ -148,8 +149,7 @@ export default function Hero() {
         <span className="text-[#2d3748] dark:text-[#e6f1ff] text-xl block mb-1.5 mt-2 font-medium leading-7">
   Computer Science Undergraduate | Software Engineer
 </span>
-          I’m passionate about solving problems, exploring new technologies, and designing user-friendly interfaces.
-          Currently, I’m seeking an internship opportunity to apply my skills and gain real-world experience.
+          Passionate about solving complex problems, exploring modern technologies, and creating innovative, user-friendly solutions that add real value.
         </motion.p>
 
 
