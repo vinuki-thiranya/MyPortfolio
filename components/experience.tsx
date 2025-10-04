@@ -55,20 +55,31 @@ export default function Experience() {
                       transition={{ duration: 0.6, delay: 0.2 }}
                       viewport={{ amount: 0.3 }}
                     >
-                       Where I've Worked
+                       What I’ve Learned
                     </motion.div>
 
 
 
-          <motion.h1 
-            className="mt-5 mb-15 font-poppins text-[#1a202c] dark:text-[#e6f1ff]/90 text-6xl md:text-8xl lg:text-[100px] leading-[110px] font-semibold"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ threshold: 0.3 }}
-          >
-            Experience
-          </motion.h1>
+           
+            <motion.h1 
+              className="mt-2 mb-4 text-[#1a202c] dark:text-[#e6f1ff]/90 font-poppins text-6xl md:text-8xl lg:text-[100px] leading-[110px] font-semibold"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              viewport={{ amount: 0.3 }}
+            >
+              
+            </motion.h1>
+            <motion.h1
+            className="motion-heading cursor-target hero-heading mt-0 mb-1 text-[#2d3748] dark:text-[#e6f1ff]/90 text-4xl md:text-6xl lg:text-[75px] leading-[45px] md:leading-[70px] lg:leading-[90px] font-black tracking-tight"
+            data-cursor-target="true"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }} 
+            transition={{ duration: 0.8, delay: 2.4 }}
+
+            style={{ cursor: "none", fontFamily: 'var(--font-playfair), var(--font-inter)' }}>
+              {"Experience"}
+              </motion.h1>
 
           <motion.p 
             className="w-full max-w-[4000px] text-[#4a5568] dark:text-[#e6f1ff]/80 font-poppins text-base leading-7 mb-20 mt-10"

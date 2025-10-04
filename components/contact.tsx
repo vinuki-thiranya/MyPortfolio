@@ -19,14 +19,24 @@ export default function Contact() {
           </motion.div>
 
           <motion.h1 
-            className="font-poppins text-[#e6f1ff] text-6xl md:text-8xl lg:text-[100px] leading-[110px] mb-12 font-semibold"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ amount: 0.3 }}
-          >
-            say hello
-          </motion.h1>
+              className="mt-2 mb-4 text-[#1a202c] dark:text-[#e6f1ff]/90 font-poppins text-6xl md:text-8xl lg:text-[100px] leading-[110px] font-semibold"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              viewport={{ amount: 0.3 }}
+            >
+              
+            </motion.h1>
+            <motion.h1
+            className="motion-heading cursor-target hero-heading mt-0 mb-1 text-[#2d3748] dark:text-[#e6f1ff]/90 text-4xl md:text-6xl lg:text-[75px] leading-[45px] md:leading-[70px] lg:leading-[90px] font-black tracking-tight"
+            data-cursor-target="true"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }} 
+            transition={{ duration: 0.8, delay: 2.4 }}
+
+            style={{ cursor: "none", fontFamily: 'var(--font-playfair), var(--font-inter)' }}>
+              {"Say Hello"}
+              </motion.h1>
 
           <motion.div 
             className="max-w-[600px] mb-12"
@@ -69,7 +79,7 @@ export default function Contact() {
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          <div className="font-poppins text-[#e6f1ff]/30 text-sm">© 2025 . WebDev For You . All Rights Reserved</div>
+          <div className="font-poppins text-[#e6f1ff]/30 text-sm">© 2025 . VN For You . All Rights Reserved</div>
 
           <div className="flex justify-end items-center gap-8">
             <a
@@ -79,7 +89,7 @@ export default function Contact() {
               Style Guide
             </a>
             <a
-              href="/image-licenses"
+              href=""
               className="font-poppins text-[#e6f1ff]/30 text-sm no-underline hover:text-[#e6f1ff]/60 transition-colors"
             >
               Image Licenses

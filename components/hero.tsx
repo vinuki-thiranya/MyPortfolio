@@ -161,8 +161,8 @@ export default function Hero() {
           transition={{ delay: 2.8 }}
         >
           <motion.a
-            href="/cv.pdf"
-            download
+            href="/SE-my resume.pdf"
+            download="SE-my resume.pdf"
             className="cursor-target hero-button group relative flex items-center justify-center px-6 py-3 font-poppins font-medium rounded-lg overflow-hidden transition-all duration-300"
             data-cursor-target="true"
             style={{
@@ -178,13 +178,13 @@ export default function Hero() {
           >
             <span className="relative z-10 flex items-center text-[#0a192f]">
               <Download className="w-5 h-5 mr-2" />
-              Download CV
+              Download Resume
             </span>
             <span className="absolute inset-0 bg-gradient-to-r from-[#64ffd9] to-[#4fd1c7] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
           </motion.a>
 
           <motion.a
-            href="https://github.com"
+            href="https://github.com/vinuki-thiranya"
             target="_blank"
             rel="noopener noreferrer"
             className="cursor-target hero-button group relative flex items-center justify-center px-6 py-3 font-poppins font-medium rounded-lg border-2 border-[#64ffd9] bg-transparent overflow-hidden transition-all duration-300"

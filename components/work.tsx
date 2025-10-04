@@ -150,9 +150,20 @@ export default function Work() {
               transition={{ duration: 0.8, delay: 0.4 }}
               viewport={{ amount: 0.3 }}
             >
-              projects
+              
             </motion.h1>
-            
+            <motion.h1
+            className="motion-heading cursor-target hero-heading mt-0 mb-1 text-[#2d3748] dark:text-[#e6f1ff]/90 text-4xl md:text-6xl lg:text-[75px] leading-[45px] md:leading-[70px] lg:leading-[90px] font-black tracking-tight"
+            data-cursor-target="true"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }} 
+            transition={{ duration: 0.8, delay: 2.4 }}
+
+            style={{ cursor: "none", fontFamily: 'var(--font-playfair), var(--font-inter)' }}>
+              {"Projects"}
+              </motion.h1>
+
+              
             <motion.p 
               className="w-full mb-8 text-[#4a5568] dark:text-[#e6f1ff]/70 font-poppins text-base leading-7"
               initial={{ opacity: 0, y: 20 }}

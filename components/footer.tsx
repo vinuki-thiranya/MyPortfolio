@@ -22,7 +22,7 @@ export default function Footer() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 3.2 }}
       >
-        <div className="mb-24">
+        <div className="mb-12">
           <a
             href="mailto:vtkatugampala@gmail.com"
             className="font-poppins text-[#718096] dark:text-[#e6f1ff]/60 text-sm no-underline hover:text-[#5a67d8] dark:hover:text-[#64ffd9] hover:-translate-y-1 transition-all duration-400 block"

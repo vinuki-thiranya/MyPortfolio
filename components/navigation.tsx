@@ -39,10 +39,16 @@ export default function Navigation() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 1.6 }}
       >
-        {/* Logo */}
-        <div className="static w-10">
+        {/* Logo (animated like Projects) */}
+        <motion.div
+          className="static w-10"
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ amount: 0.3 }}
+        >
           <Image src="/images/v-logo.png" alt="Logo" width={40} height={40} className="w-full h-auto" />
-        </div>
+        </motion.div>
 
         {/* Navigation */}
         <nav className="flex justify-end items-center">
@@ -57,58 +63,19 @@ export default function Navigation() {
             >
               {/* Small Icon Box */}
               
-                <svg 
-                  width="20" 
-                  height="20" 
-                  viewBox="0 0 24 24" 
-                  fill="none" 
-                  className="text-[#00F5A0] transition-transform duration-300"
-                >
-                  <path 
-                    d="M3 7V17C3 18.1046 3.89543 19 5 19H19C20.1046 19 21 18.1046 21 17V7M3 7L12 2L21 7M3 7L12 12L21 7" 
-                    stroke="currentColor" 
-                    strokeWidth="2" 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round"
-                  />
-                  <path 
-                    d="M8 12V16" 
-                    stroke="currentColor" 
-                    strokeWidth="2" 
-                    strokeLinecap="round"
-                  />
-                  <path 
-                    d="M16 12V16" 
-                    stroke="currentColor" 
-                    strokeWidth="2" 
-                    strokeLinecap="round"
-                  />
-                </svg>
-            
+               
               
-              {/* Text that slides from right */}
-              <div className="overflow-hidden ml-3">
-                <motion.span
-                  className="font-mono text-[#2d3748] dark:text-white text-sm font-medium whitespace-nowrap block"
-                  initial={{ x: 100, opacity: 0 }}
-                  animate={{ 
-                    x: 0, 
-                    opacity: 1,
-                    transition: { 
-                      duration: 0.4, 
-                      ease: "easeOut",
-                      when: "beforeChildren" 
-                    }
-                  }}
-                  whileHover={{ 
-                    color: "#00F5A0",
-                    transition: { duration: 0.2 }
-                  }}
-                >
-                  PROJECTS
-                </motion.span>
-              </div>
+            
             </motion.a>
+             <motion.div 
+                          className="w-[100px] ml-[3px] border-b border-[#667eea] dark:border-[#e6f1ff] text-[#2d3748] dark:text-[#e6f1ff] font-poppins text-xs leading-6 font-semibold tracking-[1px] uppercase mb-5"
+                          initial={{ opacity: 0, y: -30 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.6, delay: 0.2 }}
+                          viewport={{ amount: 0.3 }}
+                        >
+                          Projects
+                        </motion.div>
 
             {/* Contact Button - Triggers Chatbot */}
             <motion.button

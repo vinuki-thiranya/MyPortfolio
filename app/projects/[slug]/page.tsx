@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { ExternalLink, Github, Monitor, Square, TrendingUp, CheckCircle, Code, Calendar, Users } from "lucide-react"
+import Contact from '@/components/contact'
 
 // Project data
 const projectsData = {
@@ -309,13 +310,13 @@ export default function ProjectPage({ params }: ProjectPageProps) {
                 {project.detailedDescription}
               </p>
 
-              {/* Skills Tags */}
-              <div className="flex flex-wrap gap-4">
+              {/* Skills Tags (smaller) */}
+              <div className="flex flex-wrap gap-3">
                 {project.skills.map((skill, index) => (
                   <Button 
                     key={index}
                     variant="outline" 
-                    className="border-white/20 text-white hover:bg-white/10 bg-transparent"
+                    className="border-white/20 text-white hover:bg-white/10 bg-transparent px-3 py-1 text-sm"
                   >
                     {skill}
                   </Button>
@@ -327,7 +328,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
 
         {/* Project Images Section */}
         <section className="mb-20">
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-4xl mx-auto px-8">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -361,20 +362,20 @@ export default function ProjectPage({ params }: ProjectPageProps) {
             <h2 className="text-6xl md:text-7xl font-black tracking-tight">RESULTS</h2>
           </motion.div>
 
-          <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-12 text-center">
-            {project.results.map((result, index) => (
+          <div className="max-w-4xl mx-auto grid md:grid-cols-3 gap-12 text-center px-8">
+                {project.results.map((result, index) => (
               <motion.div 
                 key={index}
-                className="space-y-6"
-                initial={{ opacity: 0, y: 50 }}
+                className="space-y-4"
+                initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.2 }}
+                transition={{ duration: 0.6, delay: index * 0.15 }}
                 viewport={{ once: true }}
               >
-                <div className="w-16 h-16 mx-auto bg-[#64ffd9]/20 rounded-lg flex items-center justify-center">
-                  <CheckCircle className="h-8 w-8 text-[#64ffd9]" />
+                <div className="w-12 h-12 mx-auto bg-[#64ffd9]/20 rounded-md flex items-center justify-center">
+                  <CheckCircle className="h-6 w-6 text-[#64ffd9]" />
                 </div>
-                <h3 className="text-2xl font-bold">{result.title}</h3>
+                <h3 className="text-xl font-semibold">{result.title}</h3>
               </motion.div>
             ))}
           </div>
@@ -404,22 +405,22 @@ export default function ProjectPage({ params }: ProjectPageProps) {
             >
               <Card className="bg-[#0a192f]/80 border border-[#64ffd9]/20 backdrop-blur-sm overflow-hidden">
                 <div className="p-12">
-                  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                     {project.technologies.map((tech, index) => (
                       <motion.div
                         key={index}
                         className="group cursor-pointer"
-                        initial={{ opacity: 0, scale: 0.8 }}
+                        initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.5, delay: index * 0.1 }}
-                        whileHover={{ scale: 1.05 }}
+                        transition={{ duration: 0.4, delay: index * 0.06 }}
+                        whileHover={{ scale: 1.02 }}
                         viewport={{ once: true }}
                       >
-                        <div className="bg-[#64ffd9]/10 hover:bg-[#64ffd9]/20 rounded-xl p-6 text-center transition-all duration-300 border border-[#64ffd9]/10 hover:border-[#64ffd9]/30">
-                          <div className="w-12 h-12 mx-auto mb-4 bg-[#64ffd9]/20 rounded-lg flex items-center justify-center group-hover:bg-[#64ffd9]/30 transition-all duration-300">
-                            <Code className="h-6 w-6 text-[#64ffd9]" />
+                        <div className="bg-[#64ffd9]/10 hover:bg-[#64ffd9]/20 rounded-lg p-3 text-center transition-all duration-200 border border-[#64ffd9]/10 hover:border-[#64ffd9]/30">
+                          <div className="w-10 h-10 mx-auto mb-3 bg-[#64ffd9]/20 rounded-md flex items-center justify-center group-hover:bg-[#64ffd9]/30 transition-all duration-200">
+                            <Code className="h-5 w-5 text-[#64ffd9]" />
                           </div>
-                          <h4 className="text-white font-medium text-sm group-hover:text-[#64ffd9] transition-colors duration-300">
+                          <h4 className="text-white font-medium text-xs group-hover:text-[#64ffd9] transition-colors duration-200">
                             {tech}
                           </h4>
                         </div>
@@ -431,24 +432,24 @@ export default function ProjectPage({ params }: ProjectPageProps) {
                     <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
                       <Button
                         variant="outline"
-                        className="border-[#64ffd9] text-[#64ffd9] hover:bg-[#64ffd9] hover:text-[#0a192f] bg-transparent transition-all duration-300 px-8 py-3"
+                        className="border-[#64ffd9] text-[#64ffd9] hover:bg-[#64ffd9] hover:text-[#0a192f] bg-transparent transition-all duration-200 px-4 py-2 text-sm"
                         asChild
                       >
                         <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="flex items-center">
-                          <Monitor className="mr-3 h-5 w-5" />
-                          Visit Live Site
-                          <ExternalLink className="ml-3 h-4 w-4" />
+                          <Monitor className="mr-2 h-4 w-4" />
+                          Visit Live
+                          <ExternalLink className="ml-2 h-3.5 w-3.5" />
                         </a>
                       </Button>
                       <Button
                         variant="outline"
-                        className="border-[#64ffd9] text-[#64ffd9] hover:bg-[#64ffd9] hover:text-[#0a192f] bg-transparent transition-all duration-300 px-8 py-3"
+                        className="border-[#64ffd9] text-[#64ffd9] hover:bg-[#64ffd9] hover:text-[#0a192f] bg-transparent transition-all duration-200 px-4 py-2 text-sm"
                         asChild
                       >
                         <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="flex items-center">
-                          <Github className="mr-3 h-5 w-5" />
-                          View Source Code
-                          <ExternalLink className="ml-3 h-4 w-4" />
+                          <Github className="mr-2 h-4 w-4" />
+                          View Code
+                          <ExternalLink className="ml-2 h-3.5 w-3.5" />
                         </a>
                       </Button>
                     </div>
@@ -471,7 +472,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
             <h1 className="text-8xl md:text-9xl font-black tracking-tight mb-8">MORE WORK</h1>
           </motion.div>
 
-          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
+          <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8 px-8">
             {otherProjects.map((otherProject, index) => (
               <motion.div
                 key={otherProject.id}
@@ -482,7 +483,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
               >
                 <Link href={`/projects/${otherProject.slug}`}>
                   <Card className="bg-gray-100 border-0 overflow-hidden hover:bg-gray-200 transition-colors group cursor-pointer">
-                    <div className="p-8">
+            <div className="p-4">
                       <div className="aspect-video relative mb-6 rounded-lg overflow-hidden">
                         <Image
                           src={otherProject.image}
@@ -491,8 +492,8 @@ export default function ProjectPage({ params }: ProjectPageProps) {
                           className="object-cover group-hover:scale-105 transition-transform duration-300"
                         />
                       </div>
-                      <h3 className="text-2xl font-bold text-black mb-4">{otherProject.title}</h3>
-                      <p className="text-gray-600 mb-6">{otherProject.description}</p>
+                      <h3 className="text-lg font-semibold text-black mb-2">{otherProject.title}</h3>
+                      <p className="text-gray-600 mb-4 text-sm">{otherProject.description}</p>
                       <div className="flex flex-wrap gap-2">
                         {otherProject.technologies.slice(0, 3).map((tech, techIndex) => (
                           <span
@@ -528,25 +529,41 @@ export default function ProjectPage({ params }: ProjectPageProps) {
               </Button>
             </div>
           </div>
+
+            {/* Footer */}
+        <div className="max-w-6xl mx-auto px-6">
+          <motion.div
+            className="flex mt-24 md:mt-32 justify-between items-end"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            <div className="font-poppins text-[#e6f1ff]/30 text-sm">© 2025 . VN For You . All Rights Reserved</div>
+
+            <div className="flex justify-end items-center gap-8">
+              <a
+                href="/style-guide"
+                className="font-poppins text-[#e6f1ff]/30 text-sm no-underline hover:text-[#e6f1ff]/60 transition-colors"
+              >
+                Style Guide
+              </a>
+              <a
+                href=""
+                className="font-poppins text-[#e6f1ff]/30 text-sm no-underline hover:text-[#e6f1ff]/60 transition-colors"
+              >
+                Image Licenses
+              </a>
+            </div>
+          </motion.div>
+        </div>
         </section>
+
       </main>
 
-      {/* Footer */}
-      <footer className="border-t border-gray-800 bg-black px-6 py-8">
-        <div className="max-w-6xl mx-auto text-center">
-          <div className="text-gray-400 space-y-2">
-            <p>© 2025 . WebDev For You . All Rights Reserved</p>
-            <div className="flex justify-center space-x-4 text-sm">
-              <Link href="/style-guide" className="hover:text-[#64ffd9] transition-colors">
-                Style Guide
-              </Link>
-              <Link href="/image-licenses" className="hover:text-[#64ffd9] transition-colors">
-                Image Licenses
-              </Link>
-            </div>
-          </div>
-        </div>
-      </footer>
-    </div>
+      
+      </div>
+     
+    
   )
 }

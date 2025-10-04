@@ -35,15 +35,26 @@ export default function OnlyAboutDesc() {
             Get To Know Me
           </motion.div>
 
-          <motion.h1 
-            className="mt-2.5 mb-6 text-[#1a202c] dark:text-[#e6f1ff]/90 font-poppins text-6xl md:text-8xl lg:text-[100px] leading-[110px] font-semibold"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ amount: 0.3 }}
-          >
-            about me
-          </motion.h1>
+           
+            <motion.h1 
+              className="mt-2 mb-4 text-[#1a202c] dark:text-[#e6f1ff]/90 font-poppins text-6xl md:text-8xl lg:text-[100px] leading-[110px] font-semibold"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              viewport={{ amount: 0.3 }}
+            >
+              
+            </motion.h1>
+            <motion.h1
+            className="motion-heading cursor-target hero-heading mt-0 mb-1 text-[#2d3748] dark:text-[#e6f1ff]/90 text-4xl md:text-6xl lg:text-[75px] leading-[45px] md:leading-[70px] lg:leading-[90px] font-black tracking-tight"
+            data-cursor-target="true"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }} 
+            transition={{ duration: 0.8, delay: 2.4 }}
+
+            style={{ cursor: "none", fontFamily: 'var(--font-playfair), var(--font-inter)' }}>
+              {"About Me"}
+              </motion.h1>
 
           <div className="space-y-2 mt-12" ref={ref}>
             {lines.map((line, index) => (
