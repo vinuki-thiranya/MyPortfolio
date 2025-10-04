@@ -5,7 +5,7 @@ import { useRef } from "react"
 import Navigation from "./navigation"
 import Grid from "./grid"
 import Footer from "./footer"
-import { Download, Github } from "lucide-react"
+import { Download, Github, Linkedin, Facebook, Instagram } from "lucide-react"
 import { Playfair_Display, Inter } from 'next/font/google'
 
 // Load fonts
@@ -139,7 +139,7 @@ export default function Hero() {
 
 
         <motion.p
-          className="mb-4 md:mb-6 lg:mb-8 text-[#4a5568] dark:text-[#e6f1ff]/70 text-lg leading-6 md:leading-7 lg:leading-8 max-w-[650px]"
+          className="hidden lg:block mb-4 md:mb-6 lg:mb-8 text-[#4a5568] dark:text-[#e6f1ff]/70 text-lg leading-6 md:leading-7 lg:leading-8 max-w-[650px]"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 2.6 }}
@@ -212,18 +212,38 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 3 }}
         >
           <div className="flex justify-center gap-6 mb-8">
-            {["behance", "dribbble", "linkedin"].map((social) => (
-              <motion.a
-                key={social}
-                href={`https://${social}.com`}
-                className="flex w-10 h-10 justify-center items-center rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-[#e6f1ff] hover:text-[#64ffd9] transition-all duration-300"
-                whileHover={{ y: -2, scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                {/* Replace with actual icons */}
-                <span className="text-lg">{social[0].toUpperCase()}</span>
-              </motion.a>
-            ))}
+            <motion.a
+              href="https://www.linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex w-10 h-10 justify-center items-center rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-[#e6f1ff] hover:text-[#64ffd9] transition-all duration-300"
+              whileHover={{ y: -2, scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <Linkedin className="w-4 h-4" />
+            </motion.a>
+
+            <motion.a
+              href="https://www.facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex w-10 h-10 justify-center items-center rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-[#e6f1ff] hover:text-[#64ffd9] transition-all duration-300"
+              whileHover={{ y: -2, scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <Facebook className="w-4 h-4" />
+            </motion.a>
+
+            <motion.a
+              href="https://www.instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex w-10 h-10 justify-center items-center rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-[#e6f1ff] hover:text-[#64ffd9] transition-all duration-300"
+              whileHover={{ y: -2, scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <Instagram className="w-4 h-4" />
+            </motion.a>
           </div>
 
           <div className="text-center">

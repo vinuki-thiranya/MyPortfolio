@@ -19,9 +19,13 @@ const robotoMono = Roboto_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Vinuki Thiranya - Portfolio",
-  description: "Software Engineer & Web Developer Portfolio",
- 
+  title: "Vinuki Thiranya",
+  description: "My Software Engineer & Web Developer Portfolio",
+  icons: {
+    icon: "/images/title logo.png",
+    shortcut: "/images/title logo.png",
+    apple: "/images/title logo.png",
+  },
 };
 
 export default function RootLayout({
