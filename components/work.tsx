@@ -237,16 +237,50 @@ export default function Work() {
 
                     {/* Content Section */}
                     <div className="flex-1 flex flex-col justify-center">
-                      {/* Desktop: concise title only on hover (no description/techs) */}
                       <div className="hidden lg:block">
                         <motion.h3
                           className="text-4xl font-bold text-white mb-6"
-                          initial={{ y: 20, opacity: 0 }}
-                          animate={{ y: hoveredProject === project.id ? 0 : 20, opacity: hoveredProject === project.id ? 1 : 0 }}
-                          transition={{ duration: 0.3, delay: 0.05 }}
+                          initial={{ y: 30, opacity: 0 }}
+                          animate={{
+                            y: hoveredProject === project.id ? 0 : 30,
+                            opacity: hoveredProject === project.id ? 1 : 0,
+                          }}
+                          transition={{ duration: 0.4, delay: 0.1 }}
                         >
                           {project.title}
                         </motion.h3>
+
+                        <motion.p
+                          className="text-[#a8b2d1] mb-6 text-lg leading-relaxed"
+                          initial={{ y: 30, opacity: 0 }}
+                          animate={{
+                            y: hoveredProject === project.id ? 0 : 30,
+                            opacity: hoveredProject === project.id ? 1 : 0,
+                          }}
+                          transition={{ duration: 0.4, delay: 0.2 }}
+                        >
+                          {project.description}
+                        </motion.p>
+
+                        {/* Technologies */}
+                        <motion.div
+                          className="flex flex-wrap gap-3 mb-8"
+                          initial={{ y: 30, opacity: 0 }}
+                          animate={{
+                            y: hoveredProject === project.id ? 0 : 30,
+                            opacity: hoveredProject === project.id ? 1 : 0,
+                          }}
+                          transition={{ duration: 0.4, delay: 0.3 }}
+                        >
+                          {project.technologies.map((tech) => (
+                            <span
+                              key={tech}
+                              className="px-4 py-2 bg-[#64ffd9]/20 text-[#64ffd9] text-sm rounded-full border border-[#64ffd9]/30 backdrop-blur-sm"
+                            >
+                              {tech}
+                            </span>
+                          ))}
+                        </motion.div>
                       </div>
 
                       {/* Action Buttons */}
