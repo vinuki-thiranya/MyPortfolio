@@ -9,35 +9,48 @@ export default function Experience() {
 
   const experiences = [
     {
-      title: "Software Engineering",
-      company: "Core Foundation & Architecture",
+      title: "The Art of Code Architecture",
+      company: "Core Programming & System Design",
       period: "Academic & Project Experience",
       type: "Expertise Area",
-      description: "I have a solid foundation in core software engineering principles, including Object-Oriented Programming (OOP), Data Structures & Algorithms, and Design Patterns, which I apply to build efficient and maintainable solutions. My experience includes system design and architecture, creating scalable applications with RESTful API design and database-backed services. I am skilled in Agile & Scrum methodologies, Git-based version control, and have practical exposure to CI/CD workflows for smooth software delivery.",
+      description: "My journey began with mastering the art of writing elegant code in Java and Python, where I learned to think like an architect - building robust systems with Object-Oriented Programming principles at their core. I don't just write code; I craft maintainable, scalable solutions that stand the test of time. From designing system architectures to implementing seamless CI/CD workflows, I approach every challenge with both technical precision and creative problem-solving.",
+      skills: ["Java", "Python", "OOP", "Clean Code", "System Design", "Agile", "Git"],
       link: "#",
     },
     {
-      title: "Web & Application Development",
-      company: "Full-Stack Development Lifecycle",
+      title: "Algorithmic Problem Solving",
+      company: "Computational Thinking & Optimization",
+      period: "Continuous Practice & Application",
+      type: "Technical Skills",
+      description: "I see data structures and algorithms as the building blocks of computational thinking - each array, tree, and graph telling its own story of efficiency and elegance. My passion lies in transforming complex problems into optimized solutions, whether it's navigating intricate graph traversals or designing lightning-fast sorting algorithms. I've developed an intuitive understanding of when to deploy which structure, turning theoretical complexity into practical performance gains that make applications sing.",
+      skills: ["DSA", "Big-O Analysis", "Problem Solving", "Optimization", "BFS/DFS", "Sorting Algorithms"],
+      link: "#",
+    },
+    {
+      title: "Data Storytelling & Database Design",
+      company: "Intelligent Data Management",
+      period: "Academic & Project Implementation",
+      type: "System Design",
+      description: "Data tells stories, and I've learned to be its storyteller. I approach database design as crafting the perfect narrative structure - where every table, relationship, and index serves a purpose in the larger story. From orchestrating complex joins that reveal hidden insights to designing ETL processes that transform raw data into actionable intelligence, I build databases that don't just store information but empower decision-making and drive business value.",
+      skills: ["SQL", "Database Design", "CRUD", "Joins", "Indexing", "Data Modeling", "ETL"],
+      link: "#",
+    },
+    {
+      title: "Full-Stack Craftsmanship",
+      company: "Web Technologies & API Integration",
       period: "Hands-on Project Experience",
       type: "Technical Skills",
-      description: "My expertise covers the full-stack development lifecycle, from designing databases and backends with Spring Boot, PHP, and SQL, to building responsive frontends with React, Next.js, and Bootstrap. I have worked on e-commerce and domain-specific platforms (floral shop, pineapple store, spare parts shop), ensuring features such as authentication, order management, and event booking workflows. Performance, maintainability, and user experience are core aspects of my development approach.",
+      description: "Building applications is my canvas, and full-stack development is my art. I love the dance between frontend elegance and backend power - creating interfaces that feel intuitive while engineering robust APIs that work tirelessly behind the scenes. From e-commerce platforms that handle real transactions to domain-specific applications that solve real-world problems, I bridge the gap between user experience and technical excellence, crafting digital experiences that users love and systems that scale.",
+      skills: ["HTML/CSS/JS", "React", "Spring Boot", "REST APIs", "PHP", "Bootstrap"],
       link: "#",
     },
     {
-      title: "Data & Systems",
-      company: "Database Design & Distributed Systems",
-      period: "Academic & Lab Implementation",
-      type: "System Design",
-      description: "I have hands-on experience with database design, data modeling, and ETL concepts, applying them in real-world systems to ensure data integrity, consistency, and reliability. My academic background also covers distributed systems concepts such as replication, fault tolerance, and consensus, which I have explored through coursework and lab-based implementations.",
-      link: "#",
-    },
-    {
-      title: "AI & Applied Machine Learning",
-      company: "NLP & AI-Powered Applications",
-      period: "Project Applications",
-      type: "Emerging Tech",
-      description: "While not my primary focus, I have applied AI concepts in projects, particularly in Natural Language Processing (NLP) and AI-powered applications. This includes integrating Gemini AI for generating customized interview questions and applying data preprocessing and evaluation techniques to deliver practical, user-facing solutions.",
+      title: "Developer's Workshop",
+      company: "Professional Workflow & Collaboration",
+      period: "Project & Team Experience",
+      type: "Best Practices",
+      description: "Great software isn't built in isolation - it's a symphony of collaboration, precision, and continuous improvement. I've embraced the rhythm of Agile development, where every sprint tells a story of progress and every standup strengthens team alignment. Mastering tools like Git and modern IDEs has taught me that the true art of development lies not just in writing code, but in crafting workflows that enable creativity, ensure quality, and foster teamwork that turns ambitious ideas into shipped products.",
+      skills: ["Git/GitHub", "IntelliJ", "VS Code", "Debugging", "Agile", "Sprints"],
       link: "#",
     },
   ]
@@ -47,39 +60,26 @@ export default function Experience() {
       <div className="w-full max-w-[900px] px-4">
          <div className="tracking-normal leading-7 text-left">
           
-
            <motion.div 
-                      className="w-[200px] ml-[3px] border-b border-[#667eea] dark:border-[#e6f1ff] text-[#2d3748] dark:text-[#e6f1ff] font-poppins text-sm leading-10 font-semibold tracking-[2px] uppercase mb-5"
-                      initial={{ opacity: 0, x: -30 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.6, delay: 0.2 }}
-                      viewport={{ amount: 0.3 }}
-                    >
-                       What I’ve Learned
-                    </motion.div>
+             className="w-[200px] ml-[3px] border-b border-[#667eea] dark:border-[#e6f1ff] text-[#2d3748] dark:text-[#e6f1ff] font-poppins text-sm leading-10 font-semibold tracking-[2px] uppercase mb-5"
+             initial={{ opacity: 0, x: -30 }}
+             whileInView={{ opacity: 1, x: 0 }}
+             transition={{ duration: 0.6, delay: 0.2 }}
+             viewport={{ amount: 0.3 }}
+           >
+             My Tech Journey
+           </motion.div>
 
-
-
-           
-            <motion.h1 
-              className="mt-2 mb-4 text-[#1a202c] dark:text-[#e6f1ff]/90 font-poppins text-6xl md:text-8xl lg:text-[100px] leading-[110px] font-semibold"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              viewport={{ amount: 0.3 }}
-            >
-              
-            </motion.h1>
             <motion.h1
-            className="motion-heading cursor-target hero-heading mt-0 mb-1 text-[#2d3748] dark:text-[#e6f1ff]/90 text-4xl md:text-6xl lg:text-[75px] leading-[45px] md:leading-[70px] lg:leading-[90px] font-black tracking-tight"
-            data-cursor-target="true"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }} 
-            transition={{ duration: 0.8, delay: 2.4 }}
-
-            style={{ cursor: "none", fontFamily: 'var(--font-playfair), var(--font-inter)' }}>
-              {"Experience"}
-              </motion.h1>
+              className="motion-heading cursor-target hero-heading mt-0 mb-1 text-[#2d3748] dark:text-[#e6f1ff]/90 text-4xl md:text-6xl lg:text-[75px] leading-[45px] md:leading-[70px] lg:leading-[90px] font-black tracking-tight"
+              data-cursor-target="true"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }} 
+              transition={{ duration: 0.8, delay: 2.4 }}
+              style={{ cursor: "none", fontFamily: 'var(--font-playfair), var(--font-inter)' }}
+            >
+              Experiences
+            </motion.h1>
 
           <motion.p 
             className="w-full max-w-[4000px] text-[#4a5568] dark:text-[#e6f1ff]/80 font-poppins text-base leading-7 mb-20 mt-10"
@@ -88,7 +88,8 @@ export default function Experience() {
             transition={{ duration: 0.6, delay: 0.6 }}
             viewport={{ threshold: 0.3 }}
           >
-            Here's a brief rundown of my  experiences and skills.
+            Every line of code tells a story. Here's mine - a journey of transforming complex challenges 
+            into elegant solutions, one algorithm at a time.
           </motion.p>
         </div>
 
@@ -136,9 +137,22 @@ export default function Experience() {
                 transition={{ duration: 0.3 }}
               >
                 <div className="mt-7 pb-7">
-                  <p className="mb-5 font-poppins text-[#4a5568] dark:text-[#e6f1ff]/70 text-base leading-7">
+                  <p className="mb-5 font-poppins text-[#4a5568] dark:text-[#e6f1ff]/70 text-base leading-7 italic">
                     {exp.description}
                   </p>
+                  
+                  {/* Skills Tags */}
+                  <div className="flex flex-wrap gap-2 mb-5">
+                    {exp.skills.map((skill, skillIndex) => (
+                      <span 
+                        key={skillIndex}
+                        className="px-3 py-1 bg-[#667eea]/10 dark:bg-[#64ffda]/10 text-[#667eea] dark:text-[#64ffda] text-xs font-medium rounded-full border border-[#667eea]/20 dark:border-[#64ffda]/20"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+
                   <div className="flex items-center font-poppins text-[#5a67d8] dark:text-[#64ffd9]/80 text-sm">
                     <span>Core Competency Area</span>
                     <span className="ml-4 text-xs">✓</span>

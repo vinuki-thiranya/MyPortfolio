@@ -46,8 +46,7 @@ export default function Contact() {
             viewport={{ amount: 0.3 }}
           >
             <p className="text-[#e6f1ff]/70 font-poppins leading-8 text-sm">
-              Although I'm not currently looking for freelance opportunities, my inbox is always open. Whether for a
-              potential project or just to say hi, I'll try my best to answer your email!
+              I genuinely enjoy connecting with new people! Don’t hesitate to reach out — whether it’s for a friendly chat, to share ideas, or just to say hi. I’ll be glad to hear from you.
             </p>
           </motion.div>
 
