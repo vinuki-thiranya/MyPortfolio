@@ -79,13 +79,13 @@ const projects: Project[] = [
     githubUrl: "#",
     slug: "intellihelmet-smart-safety-helmet",
   },
-  {
+ {
     id: 6,
     title: "Portfolio Website",
     description:
       "A modern portfolio website with animated transitions, dark mode, responsive design, and smooth scroll animations built with Next.js, TypeScript, and Framer Motion for enhanced user experience.",
     image:
-      "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+      "/images/portfolio project card.png",
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "React"],
     liveUrl: "#",
     githubUrl: "https://github.com/vinuki-thiranya/MyPortfolio",

@@ -193,11 +193,9 @@ const projectsData = {
     description: "A modern portfolio website with animated transitions, dark mode, responsive design, and smooth scroll animations built with Next.js, TypeScript, and Framer Motion.",
     fullDescription: "This portfolio website showcases my projects, skills, and experience through an engaging and interactive user interface. Built with modern web technologies, it features smooth animations, responsive design, and optimized performance for enhanced user experience.",
     detailedDescription: "The website includes project detail pages with dynamic routing, scroll-triggered animations, and a comprehensive design system. Every component is carefully crafted to provide seamless navigation and visual appeal while maintaining excellent performance across all devices.",
-    image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+    image: "/images/portfolio project page.png",
     images: [
-      "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      "/images/portfolio project page.png"
     ],
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "React"],
     skills: ["Frontend Development", "UI/UX Design", "Animation Systems", "Responsive Design", "Performance Optimization", "SEO"],
@@ -328,24 +326,25 @@ export default function ProjectPage({ params }: ProjectPageProps) {
 
         {/* Project Images Section */}
         <section className="mb-20">
-          <div className="max-w-4xl mx-auto px-8">
+          <div className="max-w-4xl mx-auto px-8 md:px-5">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="grid grid-cols-1 md:grid-cols-2 gap-8"
+              className="w-full"
             >
-              {project.images.map((image, index) => (
-                <div key={index} className="relative aspect-video rounded-lg overflow-hidden">
-                  <Image
-                    src={image}
-                    alt={`${project.title} screenshot ${index + 1}`}
-                    fill
-                    className="object-cover hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-              ))}
+              <div className="relative w-full rounded-xl overflow-hidden shadow-2xl mx-2">
+                <Image
+                  src={project.image}
+                  alt={`${project.title} main showcase`}
+                  width={1200}
+                  height={0}
+                  className="w-full h-auto object-contain hover:scale-105 transition-transform duration-500"
+                  priority
+                  style={{ height: 'auto' }}
+                />
+              </div>
             </motion.div>
           </div>
         </section>
