@@ -4,6 +4,7 @@ import type React from "react"
 
 import { motion } from "framer-motion"
 import Image from "next/image"
+import Link from "next/link"
 import { useTheme } from "next-themes"
 import { Sun, Moon } from "lucide-react"
 import { useEffect, useState } from "react"
@@ -52,63 +53,21 @@ export default function Navigation() {
 
         {/* Navigation */}
         <nav className="flex justify-end items-center">
-          <div className="hidden md:flex">
-            {/* Projects Icon Box with Hover Text */}
-            <motion.a
-              href="#work"
-              className="flex items-center group cursor-pointer relative"
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 1.8 }}
+          {/* Navigation Items */}
+          <div className="flex items-center gap-8">
+            <Link 
+              href="/#work" 
+              className="font-poppins text-[#2d3748] dark:text-[#e6f1ff] text-sm font-medium hover:text-[#667eea] dark:hover:text-[#64ffd9] transition-colors duration-200"
             >
-              {/* Small Icon Box */}
-              
-               
-              
-            
-            </motion.a>
-             <motion.div 
-                          className="w-[100px] ml-[3px] border-b border-[#667eea] dark:border-[#e6f1ff] text-[#2d3748] dark:text-[#e6f1ff] font-poppins text-xs leading-6 font-semibold tracking-[1px] uppercase mb-5"
-                          initial={{ opacity: 0, y: -30 }}
-                          whileInView={{ opacity: 1, y: 0 }}
-                          transition={{ duration: 0.6, delay: 0.2 }}
-                          viewport={{ amount: 0.3 }}
-                        >
-                          Projects
-                        </motion.div>
-
-            {/* Contact Button - Triggers Chatbot */}
-            <motion.button
-              onClick={handleContactClick}
-              className="flex ml-10 flex-col items-start font-mono text-[#667eea] dark:text-[#64ffd9] text-sm font-medium no-underline group cursor-pointer"
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 2.0 }}
+              PROJECTS
+            </Link>
+            <Link 
+              href="/about" 
+              className="font-poppins text-[#667eea] dark:text-[#64ffd9] text-sm font-medium hover:text-[#4c51bf] dark:hover:text-[#4fd1c7] transition-colors duration-200"
             >
-              
-              
-              <div className="w-full h-px mt-[3px] bg-[#667eea] dark:bg-[#64ffd9] scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
-            </motion.button>
+              ABOUT
+            </Link>
           </div>
-
-          {/* Mobile Navigation */}
-          <div className="flex md:hidden gap-6">
-            {navItems.map((item, index) => (
-              <motion.a
-                key={item.num}
-                href={item.href}
-                className="font-poppins text-[#2d3748] dark:text-white text-sm font-medium no-underline hover:text-[#5a67d8] dark:hover:text-[#64ffd9] transition-colors"
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 1.8 + index * 0.1 }}
-              >
-                {item.text}
-              </motion.a>
-            ))}
-          </div>
-
-          {/* Theme Toggle */}
-          
         </nav>
       </motion.div>
 

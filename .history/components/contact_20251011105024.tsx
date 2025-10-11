@@ -51,7 +51,7 @@ export default function Contact() {
           </motion.div>
 
           <motion.a
-            href="mailto:vtkatugampala@gmail.com"
+            href="mailto:vtkatugampala@gmail.com
             className="inline-flex items-center text-[#64ffd9] font-poppins hover:text-[#4fd1c7] transition-colors text-sm"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -142,7 +142,7 @@ export default function Contact() {
           </motion.a>*/}
 
           <motion.a
-            href="https://www.facebook.com/profile.php?id=61565630796973"
+            href="https://www.facebook.com/profile.php?id=61565630796973
             className="flex w-6 h-6 justify-center items-center text-[#e6f1ff]/60 hover:text-[#64ffd9] hover:-translate-y-1 transition-all duration-200 no-underline"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -154,7 +154,7 @@ export default function Contact() {
           </motion.a>
 
           <motion.a
-            href="https://www.instagram.com/vn_thiranya/"
+             href="https://www.instagram.com/vn_thiranya/"
             className="flex w-6 h-6 justify-center items-center text-[#e6f1ff]/60 hover:text-[#64ffd9] hover:-translate-y-1 transition-all duration-200 no-underline"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

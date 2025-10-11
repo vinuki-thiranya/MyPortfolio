@@ -51,7 +51,7 @@ export default function Contact() {
           </motion.div>
 
           <motion.a
-            href="mailto:vtkatugampala@gmail.com"
+            href="mailto:vtkatugampala@gmail.com
             className="inline-flex items-center text-[#64ffd9] font-poppins hover:text-[#4fd1c7] transition-colors text-sm"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

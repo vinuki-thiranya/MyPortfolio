@@ -58,7 +58,7 @@ export default function Chatbot({ isOpen, onClose }: ChatbotProps) {
 
   const handleContactMe = () => {
     // You can change this to WhatsApp link: https://wa.me/1234567890
-    window.open("mailto:vtkatugampala@gmail.com", "_blank")
+    window.open("mailto:hello@johndoe.com", "_blank")
   }
 
   return (

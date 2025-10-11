@@ -90,7 +90,7 @@ export default function OnlyAboutDesc() {
               href="/about" 
               className="group inline-flex items-center gap-2 text-[#667eea] dark:text-[#64ffd9] font-poppins text-sm font-medium hover:text-[#4c51bf] dark:hover:text-[#4fd1c7] transition-colors duration-200 no-underline"
             >
-              More About Me
+              Learn More About Me
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
             </Link>
           </motion.div>

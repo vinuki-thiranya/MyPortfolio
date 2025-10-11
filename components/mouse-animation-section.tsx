@@ -32,7 +32,7 @@ export default function MouseAnimationSection() {
   }, [])
 
   return (
-        <section className="relative h-32 bg-[#0a192f] flex items-center justify-center">
+        <section className="relative h-16 bg-[#0a192f] flex items-center justify-center  mt-5">
       {/* Mouse Animation - conditionally rendered */}
       {isVisible && (
         <div className="cursor-pointer group" onClick={scrollToNextSection}>
