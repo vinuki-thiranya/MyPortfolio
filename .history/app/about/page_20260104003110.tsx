@@ -98,7 +98,7 @@ export default function AboutPage() {
                   className="inline-block w-10 h-10 md:w-16 md:h-16 rounded-full overflow-hidden border-2 border-[#667eea] dark:border-[#64ffd9] shrink-0"
                 >
                   <Image 
-                    src="/images/about-hero-bg.jpg" 
+                    src="/images/vinuki-portrait-latest.png" 
                     alt="Vinuki" 
                     width={64} 
                     height={64} 

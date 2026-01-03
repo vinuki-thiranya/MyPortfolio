@@ -46,7 +46,6 @@ const IconMap: Record<string, any> = {
   users: Users,
   lock: Lock,
   monitor: Monitor,
-  "trending-up": TrendingUp,
   "git-branch": GitBranch,
   clock: Clock,
   check: CheckCircle,

@@ -46,7 +46,6 @@ const IconMap: Record<string, any> = {
   users: Users,
   lock: Lock,
   monitor: Monitor,
-  "trending-up": TrendingUp,
   "git-branch": GitBranch,
   clock: Clock,
   check: CheckCircle,
@@ -60,10 +59,6 @@ const IconMap: Record<string, any> = {
   zap: Zap,
   palette: Palette,
   smile: Smile,
-  brain: Zap,
-  "mouse-pointer": Monitor,
-  accessibility: Shield,
-  briefcase: Package,
 }
 
 export default function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -594,7 +589,7 @@ export default function ProjectPage({ params }: { params: Promise<{ slug: string
                         className="border border-[#64ffd9] text-[#64ffd9] hover:bg-[#64ffd9] hover:text-[#0a192f] bg-transparent transition-all duration-200 px-4 py-2 text-sm rounded-lg flex items-center"
                       >
                         <Monitor className="mr-2 h-4 w-4" />
-                        {project.category === "UI/UX Design" ? "View Prototype" : "Visit Live"}
+                        Visit Live
                         <ExternalLink className="ml-2 h-3.5 w-3.5" />
                       </a>
                       <a 

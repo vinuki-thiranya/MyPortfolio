@@ -138,7 +138,7 @@ const projects: Project[] = [
     description:
       "An AI-driven interview preparation platform designed to revolutionize how candidates prepare for technical and professional interviews using adaptive question generation and real-time feedback.",
     image:
-      "/images/mockmate2.png",
+      "/images/mockmate.png",
     technologies: ["Next.js", "TypeScript", "Firebase", "AI/ML", "Voice Processing"],
     liveUrl: "#",
     githubUrl: "https://github.com/vinuki-thiranya/InterviewMentor_",

@@ -72,39 +72,49 @@ export default function AboutPage() {
         <div className="max-w-4xl mx-auto px-6">
           <div className="w-full max-w-[900px] px-4">
             <div className="tracking-normal leading-7 text-left">
-              <motion.div 
-                className="w-[200px] ml-[3px] border-b border-[#667eea] dark:border-[#e6f1ff] text-[#2d3748] dark:text-[#e6f1ff] font-poppins text-sm leading-10 font-semibold tracking-[2px] uppercase mb-5"
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                viewport={{ amount: 0.3 }}
-              >
-                Get To Know Me
-              </motion.div>
+              <div className="flex flex-col md:flex-row md:items-center justify-between mb-5 gap-4">
+                <motion.div 
+                  className="w-[200px] ml-[3px] border-b border-[#667eea] dark:border-[#e6f1ff] text-[#2d3748] dark:text-[#e6f1ff] font-poppins text-sm leading-10 font-semibold tracking-[2px] uppercase"
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  viewport={{ amount: 0.3 }}
+                >
+                  Get To Know Me
+                </motion.div>
+
+                <motion.a
+                  href="https://www.linkedin.com/in/vinuki-thiranya"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-[#667eea] dark:text-[#64ffd9] font-poppins text-sm font-medium hover:opacity-80 transition-opacity"
+                  initial={{ opacity: 0, x: 30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                >
+                  <Linkedin className="w-4 h-4" />
+                  <span>linkedin.com/in/vinuki-thiranya</span>
+                </motion.a>
+              </div>
 
               <motion.h1
-                className="motion-heading cursor-target hero-heading mt-0 mb-1 text-[#2d3748] dark:text-[#e6f1ff]/90 text-4xl md:text-6xl lg:text-[75px] leading-[45px] md:leading-[70px] lg:leading-[90px] font-black tracking-tight mb-16 flex items-center gap-4"
+                className="flex items-center gap-4 md:gap-6 motion-heading cursor-target hero-heading mt-0 mb-1 text-[#2d3748] dark:text-[#e6f1ff]/90 text-4xl md:text-6xl lg:text-[75px] leading-[45px] md:leading-[70px] lg:leading-[90px] font-black tracking-tight mb-16"
                 data-cursor-target="true"
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }} 
                 transition={{ duration: 0.8, delay: 0.4 }}
                 style={{ cursor: "none", fontFamily: 'var(--font-poppins)' }}
               >
-                <span>Who I Am</span>
-                <motion.div
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5, delay: 0.8 }}
-                  className="inline-block w-10 h-10 md:w-16 md:h-16 rounded-full overflow-hidden border-2 border-[#667eea] dark:border-[#64ffd9] shrink-0"
-                >
+                <div className="w-12 h-12 md:w-16 md:h-16 rounded-full overflow-hidden border-2 border-[#667eea] dark:border-[#64ffd9] flex-shrink-0">
                   <Image 
-                    src="/images/about-hero-bg.jpg" 
-                    alt="Vinuki" 
+                    src="/images/vinuki-portrait.png" 
+                    alt="Vinuki Thiranya" 
                     width={64} 
                     height={64} 
                     className="w-full h-full object-cover"
                   />
-                </motion.div>
+                </div>
+                Who I Am
               </motion.h1>
             </div>
           </div>

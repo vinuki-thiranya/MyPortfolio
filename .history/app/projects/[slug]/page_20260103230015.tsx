@@ -46,7 +46,6 @@ const IconMap: Record<string, any> = {
   users: Users,
   lock: Lock,
   monitor: Monitor,
-  "trending-up": TrendingUp,
   "git-branch": GitBranch,
   clock: Clock,
   check: CheckCircle,
@@ -60,10 +59,6 @@ const IconMap: Record<string, any> = {
   zap: Zap,
   palette: Palette,
   smile: Smile,
-  brain: Zap,
-  "mouse-pointer": Monitor,
-  accessibility: Shield,
-  briefcase: Package,
 }
 
 export default function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {

@@ -83,28 +83,14 @@ export default function AboutPage() {
               </motion.div>
 
               <motion.h1
-                className="motion-heading cursor-target hero-heading mt-0 mb-1 text-[#2d3748] dark:text-[#e6f1ff]/90 text-4xl md:text-6xl lg:text-[75px] leading-[45px] md:leading-[70px] lg:leading-[90px] font-black tracking-tight mb-16 flex items-center gap-4"
+                className="motion-heading cursor-target hero-heading mt-0 mb-1 text-[#2d3748] dark:text-[#e6f1ff]/90 text-4xl md:text-6xl lg:text-[75px] leading-[45px] md:leading-[70px] lg:leading-[90px] font-black tracking-tight mb-16"
                 data-cursor-target="true"
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }} 
                 transition={{ duration: 0.8, delay: 0.4 }}
                 style={{ cursor: "none", fontFamily: 'var(--font-poppins)' }}
               >
-                <span>Who I Am</span>
-                <motion.div
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5, delay: 0.8 }}
-                  className="inline-block w-10 h-10 md:w-16 md:h-16 rounded-full overflow-hidden border-2 border-[#667eea] dark:border-[#64ffd9] shrink-0"
-                >
-                  <Image 
-                    src="/images/about-hero-bg.jpg" 
-                    alt="Vinuki" 
-                    width={64} 
-                    height={64} 
-                    className="w-full h-full object-cover"
-                  />
-                </motion.div>
+                Who I Am
               </motion.h1>
             </div>
           </div>

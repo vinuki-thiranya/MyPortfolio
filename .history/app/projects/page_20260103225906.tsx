@@ -118,37 +118,9 @@ const projects: Project[] = [
     category: "UI/UX Design",
     year: "2025"
   },
-  {
-    id: 8,
-    title: "Smart Campus – Mobile Application (UI/UX Design)",
-    description:
-      "Designed a Smart Campus mobile application UI/UX that supports three primary user roles: Students, Lecturers, and Administrators. Centralizes academic, administrative, and communication services into a single platform using HCI principles.",
-    image:
-      "/images/smart-campus-high-fidelity.png",
-    technologies: ["Figma", "UI/UX Design", "HCI", "Wireframing", "Prototyping", "Usability Testing"],
-    liveUrl: "https://www.figma.com/design/ZKmdBPOqjPVRRkzn5sIXah/libraray-system?node-id=0-1&p=f&t=3SW7eBGWtTTQyBnu-0",
-    githubUrl: "https://www.figma.com/design/yvUJ1ye36c4lcS3VROYQc8/HCI-Assignment-1?node-id=26-559&p=f&t=uPmuiB0sKTelx6DN-0",
-    slug: "smart-campus-mobile-app",
-    category: "UI/UX Design",
-    year: "2025"
-  },
-  {
-    id: 9,
-    title: "MockMate – Transforming Interview Preparation with AI",
-    description:
-      "An AI-driven interview preparation platform designed to revolutionize how candidates prepare for technical and professional interviews using adaptive question generation and real-time feedback.",
-    image:
-      "/images/mockmate2.png",
-    technologies: ["Next.js", "TypeScript", "Firebase", "AI/ML", "Voice Processing"],
-    liveUrl: "#",
-    githubUrl: "https://github.com/vinuki-thiranya/InterviewMentor_",
-    slug: "mockmate",
-    category: "AI Powered Applications",
-    year: "2025"
-  },
 ]
 
-const categories = ["All", "Web Development", "Distributed Systems", "Compiler Design", "IoT & Hardware", "UI/UX Design", "AI Powered Applications"]
+const categories = ["All", "Web Development", "Distributed Systems", "Compiler Design", "IoT & Hardware", "UI/UX Design"]
 
 export default function AllProjects() {
   const [selectedCategory, setSelectedCategory] = useState("All")

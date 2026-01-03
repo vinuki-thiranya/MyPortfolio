@@ -6,8 +6,6 @@ import { dogwoodFloraProject } from './projects/dogwood-flora-management-system'
 import { intelliHelmetProject } from './projects/intellihelmet-smart-safety-helmet'
 import { portfolioWebsiteProject } from './projects/portfolio-website'
 import { autoPartsHubProject } from './projects/autoparts-hub-mobile-app'
-import { smartCampusProject } from './projects/smart-campus-mobile-app'
-import { mockMateProject } from './projects/mockmate'
 
 export const projectsData: Record<string, ProjectData> = {
   "formlang-plus-plus": formlangPlusPlusProject,
@@ -17,8 +15,6 @@ export const projectsData: Record<string, ProjectData> = {
   "intellihelmet-smart-safety-helmet": intelliHelmetProject,
   "portfolio-website": portfolioWebsiteProject,
   "autoparts-hub-mobile-app": autoPartsHubProject,
-  "smart-campus-mobile-app": smartCampusProject,
-  "mockmate": mockMateProject,
 }
 
 export const getAllProjects = (): ProjectData[] => {

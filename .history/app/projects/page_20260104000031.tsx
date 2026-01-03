@@ -132,23 +132,9 @@ const projects: Project[] = [
     category: "UI/UX Design",
     year: "2025"
   },
-  {
-    id: 9,
-    title: "MockMate – Transforming Interview Preparation with AI",
-    description:
-      "An AI-driven interview preparation platform designed to revolutionize how candidates prepare for technical and professional interviews using adaptive question generation and real-time feedback.",
-    image:
-      "/images/mockmate2.png",
-    technologies: ["Next.js", "TypeScript", "Firebase", "AI/ML", "Voice Processing"],
-    liveUrl: "#",
-    githubUrl: "https://github.com/vinuki-thiranya/InterviewMentor_",
-    slug: "mockmate",
-    category: "AI Powered Applications",
-    year: "2025"
-  },
 ]
 
-const categories = ["All", "Web Development", "Distributed Systems", "Compiler Design", "IoT & Hardware", "UI/UX Design", "AI Powered Applications"]
+const categories = ["All", "Web Development", "Distributed Systems", "Compiler Design", "IoT & Hardware", "UI/UX Design"]
 
 export default function AllProjects() {
   const [selectedCategory, setSelectedCategory] = useState("All")
