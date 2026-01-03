@@ -1,0 +1,242 @@
+"use client"
+
+import { useEffect, useCallback, useRef } from 'react'
+
+interface UseScrollSnapOptions {
+  threshold?: number
+  duration?: number
+}
+
+export function useScrollSnap(options: UseScrollSnapOptions = {}) {
+  const { threshold = 30, duration = 400 } = options
+  const isScrollingRef = useRef(false)
+  const lastScrollTopRef = useRef(0)
+  const sectionsRef = useRef<HTMLElement[]>([])
+
+  const updateSections = useCallback(() => {
+    // Find all sections with data-scroll-section attribute
+    const sections = document.querySelectorAll('[data-scroll-section]')
+    sectionsRef.current = Array.from(sections) as HTMLElement[]
+  }, [])
+
+  const getCurrentSection = useCallback(() => {
+    const scrollTop = window.pageYOffset
+    const windowHeight = window.innerHeight
+    const viewportTop = scrollTop
+
+    let currentIndex = 0
+    let minDistance = Infinity
+
+    sectionsRef.current.forEach((section, index) => {
+      const rect = section.getBoundingClientRect()
+      const sectionTop = scrollTop + rect.top
+      const sectionBottom = sectionTop + rect.height
+      
+      // Special handling for experience section - check if it's fully scrolled
+      if (section.id === 'experience') {
+        const sectionProgress = Math.min(1, Math.max(0, (viewportTop + windowHeight - sectionTop) / rect.height))
+        
+        // If we're in the experience section but haven't fully scrolled through it,
+        // stay in this section
+        if (viewportTop >= sectionTop && viewportTop < sectionBottom) {
+          currentIndex = index
+          minDistance = 0
+          return
+        }
+        
+        // If we haven't fully scrolled through experience, don't allow moving to technologies
+        if (sectionProgress < 0.9 && index < sectionsRef.current.length - 1) {
+          const nextSection = sectionsRef.current[index + 1]
+          if (nextSection && nextSection.id === 'technologies') {
+            // Force staying in experience section
+            if (viewportTop < sectionBottom) {
+              currentIndex = index
+              minDistance = 0
+              return
+            }
+          }
+        }
+      }
+      
+      const distance = Math.abs(viewportTop - sectionTop)
+
+      if (distance < minDistance) {
+        minDistance = distance
+        currentIndex = index
+      }
+    })
+
+    return currentIndex
+  }, [])
+
+  const scrollToSection = useCallback((index: number) => {
+    if (index < 0 || index >= sectionsRef.current.length) return
+
+    const section = sectionsRef.current[index]
+    if (!section) return
+
+    const rect = section.getBoundingClientRect()
+    const scrollTop = window.pageYOffset
+    const sectionTop = scrollTop + rect.top
+    const windowHeight = window.innerHeight
+    
+    // For the technologies section, center it on the page
+    const sectionId = section.id
+    let targetPosition = sectionTop
+    
+    if (sectionId === 'technologies') {
+      // Calculate position to center the section vertically
+      const sectionHeight = rect.height
+      const availableSpace = windowHeight - sectionHeight
+      
+      // Center the section if there's enough space, otherwise align to top with some offset
+      if (availableSpace > 0) {
+        targetPosition = sectionTop - availableSpace / 2
+      } else {
+        // If section is taller than viewport, align with small top offset
+        targetPosition = sectionTop - 50
+      }
+      
+      // Ensure we don't scroll past the top of the page
+      targetPosition = Math.max(0, targetPosition)
+    }
+
+    window.scrollTo({
+      top: targetPosition,
+      behavior: 'smooth'
+    })
+  }, [])
+
+  const handleWheel = useCallback((e: WheelEvent) => {
+    if (isScrollingRef.current) {
+      e.preventDefault()
+      return
+    }
+
+    // Ultra-sensitive response to any scroll movement above minimal threshold
+    if (Math.abs(e.deltaY) > 3) {
+      const currentSectionIndex = getCurrentSection()
+      const currentSection = sectionsRef.current[currentSectionIndex]
+      
+      // Special handling for experience section
+      if (currentSection && currentSection.id === 'experience') {
+        const rect = currentSection.getBoundingClientRect()
+        const scrollTop = window.pageYOffset
+        const sectionTop = scrollTop + rect.top
+        const sectionBottom = sectionTop + rect.height
+        const windowHeight = window.innerHeight
+        const viewportBottom = scrollTop + windowHeight
+        
+        // Check if we've scrolled to the bottom of the experience section
+        const isAtBottomOfExperience = viewportBottom >= sectionBottom - 50 // 50px threshold
+        
+        if (e.deltaY > 0 && !isAtBottomOfExperience) {
+          // Scrolling down but haven't reached bottom of experience - allow natural scroll
+          return
+        }
+        
+        if (e.deltaY > 0 && isAtBottomOfExperience) {
+          // Scrolling down and at bottom of experience - can move to next section
+          e.preventDefault()
+          isScrollingRef.current = true
+          const targetIndex = Math.min(currentSectionIndex + 1, sectionsRef.current.length - 1)
+          scrollToSection(targetIndex)
+          
+          setTimeout(() => {
+            isScrollingRef.current = false
+          }, duration * 0.6)
+          return
+        }
+      }
+      
+      // Default behavior for other sections
+      e.preventDefault()
+      isScrollingRef.current = true
+      
+      let targetIndex = currentSectionIndex
+
+      // Always move only one section regardless of scroll intensity
+      if (e.deltaY > 0) {
+        // Scrolling down - move to next section only
+        targetIndex = Math.min(currentSectionIndex + 1, sectionsRef.current.length - 1)
+      } else {
+        // Scrolling up - move to previous section only
+        targetIndex = Math.max(currentSectionIndex - 1, 0)
+      }
+
+      // Only snap if we're moving to a different section
+      if (targetIndex !== currentSectionIndex) {
+        scrollToSection(targetIndex)
+      }
+
+      // Reset scrolling flag after animation with shorter delay
+      setTimeout(() => {
+        isScrollingRef.current = false
+      }, duration * 0.6) // 60% of duration for faster responsiveness
+    }
+  }, [getCurrentSection, scrollToSection, duration])
+
+  const handleKeyDown = useCallback((e: KeyboardEvent) => {
+    if (isScrollingRef.current) return
+
+    const currentSectionIndex = getCurrentSection()
+    let targetIndex = currentSectionIndex
+
+    switch (e.key) {
+      case 'ArrowDown':
+      case 'PageDown':
+        e.preventDefault()
+        targetIndex = Math.min(currentSectionIndex + 1, sectionsRef.current.length - 1)
+        break
+      case 'ArrowUp':
+      case 'PageUp':
+        e.preventDefault()
+        targetIndex = Math.max(currentSectionIndex - 1, 0)
+        break
+      case 'Home':
+        e.preventDefault()
+        targetIndex = 0
+        break
+      case 'End':
+        e.preventDefault()
+        targetIndex = sectionsRef.current.length - 1
+        break
+      default:
+        return
+    }
+
+    if (targetIndex !== currentSectionIndex) {
+      isScrollingRef.current = true
+      scrollToSection(targetIndex)
+      
+      setTimeout(() => {
+        isScrollingRef.current = false
+      }, duration)
+    }
+  }, [getCurrentSection, scrollToSection, duration])
+
+  useEffect(() => {
+    updateSections()
+    lastScrollTopRef.current = window.pageYOffset
+
+    // Add wheel event listener (with passive: false to allow preventDefault)
+    window.addEventListener('wheel', handleWheel, { passive: false })
+    
+    // Add keyboard event listener
+    window.addEventListener('keydown', handleKeyDown)
+
+    // Update sections on resize
+    window.addEventListener('resize', updateSections)
+
+    return () => {
+      window.removeEventListener('wheel', handleWheel)
+      window.removeEventListener('keydown', handleKeyDown)
+      window.removeEventListener('resize', updateSections)
+    }
+  }, [handleWheel, handleKeyDown, updateSections])
+
+  return {
+    scrollToSection,
+    getCurrentSection
+  }
+}
