@@ -136,13 +136,27 @@ const projects: Project[] = [
     id: 9,
     title: "MockMate – Transforming Interview Preparation with AI",
     description:
-      "An AI-driven interview preparation platform designed to revolutionize how candidates prepare for technical and professional interviews using adaptive question generation and real-time feedback.",
+      "Designed and developed a prototype of an AI-driven interview preparation platform that redefines how candidates prepare for technical interviews, aimed at improving how candidates prepare for interviews through AI-driven, data-based skill evaluation tools.",
     image:
       "/images/mockmate2.png",
     technologies: ["Next.js", "TypeScript", "Firebase", "AI/ML", "Voice Processing"],
     liveUrl: "#",
     githubUrl: "https://github.com/vinuki-thiranya/InterviewMentor_",
     slug: "mockmate",
+    category: "AI Powered Applications",
+    year: "2025"
+  },
+  {
+    id: 10,
+    title: "CareerSync AI – Intelligent Career Intelligence Platform",
+    description:
+      "A full-stack, AI-powered career intelligence platform designed to modernize the job search experience through intelligent automation. Features AI Resume Analyzer, Discovery Engine, and Analytics.",
+    image:
+      "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+    technologies: ["Next.js 14", "Laravel", "Python", "FastAPI", "NLP", "Scikit-Learn"],
+    liveUrl: "#",
+    githubUrl: "#",
+    slug: "careersync-ai",
     category: "AI Powered Applications",
     year: "2025"
   },

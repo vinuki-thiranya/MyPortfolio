@@ -6,9 +6,9 @@ export const mockMateProject: ProjectData = {
   title: "MockMate",
   subtitle: "AI-POWERED INTERVIEW PREPARATION PLATFORM",
   category: "AI Powered Applications",
-  description: "An AI-driven interview preparation platform designed to revolutionize how candidates prepare for technical and professional interviews.",
-  fullDescription: "MockMate is an AI-driven interview preparation platform designed to revolutionize how candidates prepare for technical and professional interviews. Traditional interview preparation methods are often time-consuming, generic, and fail to provide personalized feedback, resulting in poor interview performance and high failure rates.",
-  detailedDescription: "MockMate addresses this gap by offering AI-powered mock interviews, real-time feedback, and adaptive question generation tailored to individual skill levels and roles. The platform simulates realistic interview environments using voice interaction and data-driven evaluation, enabling candidates to practice effectively and build confidence.",
+  description: "Designed and developed a prototype of an AI-driven interview preparation platform that redefines how candidates prepare for technical interviews, aimed at improving how candidates prepare for interviews through AI-driven, data-based skill evaluation tools.",
+  fullDescription: "MockMate is an AI-driven interview preparation platform designed to revolutionize how candidates prepare for technical and professional interviews. Developed to address the high failure rate in technical interviews, it provides a realistic, data-driven environment for candidates to hone their skills.",
+  detailedDescription: "Designed and developed a prototype of an AI-driven interview preparation platform that redefines how candidates prepare for technical interviews. The system provides real-time feedback, adaptive question generation, and voice-interactive simulations for realistic practice. Targeted at the $8B global interview preparation market, MockMate aims to reduce preparation time by 40% and improve success rates by 60%.",
   image: "/images/mockmate.png",
   images: [
     "/images/mockmate.png"
@@ -34,11 +34,11 @@ export const mockMateProject: ProjectData = {
     { title: "40% Prep Reduction", icon: "zap" },
     { title: "60% Success Increase", icon: "trending-up" },
     { title: "25% Faster APIs", icon: "activity" },
-    { title: "99.9% Uptime", icon: "shield" },
+    { title: "$8B Market Potential", icon: "dollar-sign" },
     { title: "Scalable SaaS", icon: "layers" }
   ],
   caseStudy: {
-    overview: "MockMate is an AI-driven interview preparation platform designed to revolutionize how candidates prepare for technical and professional interviews. Traditional interview preparation methods are often time-consuming, generic, and fail to provide personalized feedback, resulting in poor interview performance and high failure rates.\n\nMockMate addresses this gap by offering AI-powered mock interviews, real-time feedback, and adaptive question generation tailored to individual skill levels and roles. The platform simulates realistic interview environments using voice interaction and data-driven evaluation, enabling candidates to practice effectively and build confidence.\n\nThe core objective of the project was to design and develop a scalable, user-centric SaaS platform that improves interview success rates while reducing preparation time through intelligent automation and analytics.",
+    overview: "Designed and developed a prototype of an AI-driven interview preparation platform that redefines how candidates prepare for technical interviews. The platform is aimed at improving how candidates prepare for interviews through AI-driven, data-based skill evaluation tools.",
     problemsIntro: "The project began with identifying critical issues in existing interview preparation solutions. Research revealed that most platforms rely on static question banks and lack real-time performance evaluation, making preparation inefficient and disengaging.",
     problems: [
       "73% of candidates fail interviews due to inadequate or ineffective preparation",
@@ -95,13 +95,15 @@ export const mockMateProject: ProjectData = {
       metrics: [
         "40% reduction in interview preparation time",
         "60% improvement in interview success rates",
+        "Market potential identified at $8B in global services",
         "25% faster API response times",
         "99.9% uptime during performance testing"
       ],
       impacts: [
-        "Transformed preparation from passive to active learning",
-        "Provided measurable progress tracking for users",
-        "Created a scalable solution for universities and enterprises"
+        "Revolutionized interview prep with AI-driven skill evaluation",
+        "Reduced preparation overhead for candidates and institutions",
+        "Scalable SaaS model supporting unlimited users",
+        "Realistic practice through real-time voice processing"
       ]
     },
     conclusion: "The MockMate project demonstrates how AI-driven design and engineering can significantly improve learning outcomes and real-world performance. By focusing on realism, personalization, and analytics, the platform transforms interview preparation from a passive activity into an intelligent, results-oriented process. This case study reinforces that effective software solutions are not just about advanced technology, but about solving real user problems with clarity, empathy, and measurable impact."
